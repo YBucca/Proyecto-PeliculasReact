@@ -50,10 +50,7 @@ const Carrusel = ({ mensaje, info }) => {
 				{info.map((elemento) => (
 					<Cards
 						key={elemento.id}
-						titulo={
-							info == "peliculas" ? elemento.title : elemento.name
-						} 
-            // NO FUNCIONA PARA NOMBRES DE PELICULAS
+						titulo={elemento.title} 
 						imagen={elemento.poster_path}
 					/>
 				))}
