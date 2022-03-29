@@ -1,4 +1,4 @@
-import "./PeliculaSeries.scss";
+import "../App.scss";
 import useFetchApp from "../hooks/useFetchApp";
 import Cards from "./Cards";
 const Series = ({ mensaje }) => {
@@ -8,7 +8,7 @@ const Series = ({ mensaje }) => {
 		<>
 			<h1>{mensaje}</h1>
 			<div className="container">
-				{series.map(serie => (
+				{series.map((serie) => (
 					<Cards
 						key={serie.id}
 						titulo={serie.name}

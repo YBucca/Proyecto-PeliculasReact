@@ -5,7 +5,7 @@ const useFetchApp = (tipo, categoria) => {
 	useEffect(() => {
 		// setCargando(true);
 		fetch(
-			`https://api.themoviedb.org/3/${tipo}/${categoria}?api_key=457fa7dd417d06a0e15d7fe61f662df1`
+			`https://api.themoviedb.org/3/${tipo}/${categoria}?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=es`
 		)
 			.then((res) => res.json())
 			.then((data) => setDatos(data.results));
