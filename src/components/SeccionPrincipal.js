@@ -1,15 +1,19 @@
 
-import Peliculas from "./Peliculas";
-import Series from "./Series";
 import ListaMejorPuntuadas from "./ListaMejorPuntuadas";
+import useFetchApp from "../hooks/useFetchApp";
 import "./PeliculaSeries.scss";
+import Carrusel from "./Carrusel";
+
+
 const SeccionPrincipal = () => {
+	const peliculas = useFetchApp("movie", "popular");
+	const series = useFetchApp("tv", "popular");
 	return (
 		<div className="home">
 			<h2>Seccion Principal</h2>
-			<Peliculas mensaje="Peliculas populares" url="popular" />
-			<Series mensaje="Series populares" url="popular" />
-			{/* cambiar el fetch y agregar carrusel arriba */}
+			<Carrusel mensaje="Peliculas populares" info={peliculas}  />
+			<Carrusel mensaje="Series populares" info={series} />
+	
 			<ListaMejorPuntuadas
 				titulo="Peliculas mejor puntuadas"
 				url="top_rated"

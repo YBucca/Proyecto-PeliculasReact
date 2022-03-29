@@ -11,7 +11,7 @@ const Series = ({ mensaje }) => {
 				{series.map(serie => (
 					<Cards
 						key={serie.id}
-						titulo={serie.title}
+						titulo={serie.name}
 						imagen={serie.poster_path}
 					/>
 				))}
