@@ -1,21 +1,26 @@
 import { useState, useEffect } from "react";
-const useFetchApp = (tipo, categoria) => {
+import {urlBase, apiKey, queryLenguaje, queryPage, definirCategoria } from "../utils/variables"
+const useFetchApp = (tendencia, tipo, categoria) => {
 	const [datos, setDatos] = useState([]);
 	const [cargando, setCargando] = useState(false);
 	useEffect(() => {
 		setCargando(true);
 		fetch(
-			`https://api.themoviedb.org/3/${tipo}/${categoria}?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=es`
+			`${urlBase}${definirCategoria(
+				tendencia,
+				tipo,
+				categoria
+			)}?${apiKey}${queryLenguaje}=es`
 		)
 			.then((res) => res.json())
 			.then((data) => setDatos(data.results));
 		setCargando(false);
 		console.log("datos", datos);
 	}, []);
-	return ({
+	return {
 		datos: datos,
-		cargando: cargando
-	})
+		cargando: cargando,
+	};
 };
 
 export default useFetchApp;
