@@ -4,7 +4,14 @@ import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
 const Cards = ({ titulo, imagen }) => {
 	return (
-		<Card sx={{width: 330, height:530, m: 1, bgcolor: "#9f86c0" }}>
+		<Card
+			sx={{
+				width: 330,
+				height: 530,
+				bgcolor: "#9f86c0",
+				position: "relative",
+			}}
+		>
 			<CardContent>
 				<CardMedia
 					sx={{ width: "100%" }}

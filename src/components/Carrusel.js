@@ -4,7 +4,9 @@ import Slider from "react-slick";
 import Cards from "./Cards";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-const Carrusel = ({ mensaje, info }) => {
+
+
+const Carrusel = ({ mensaje, info}) => {
 	const settings = {
 		dots: true,
 		infinite: false,
@@ -12,7 +14,6 @@ const Carrusel = ({ mensaje, info }) => {
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		initialSlide: 0,
-
 		// autoplay:true,
 		responsive: [
 			{
@@ -42,7 +43,10 @@ const Carrusel = ({ mensaje, info }) => {
 		],
 	};
 	return (
-		<Container maxWidth="false" sx={{ bgcolor: "#221942", height: 700 }}>
+		<Container
+			maxWidth="false"
+			sx={{ bgcolor: "#221942", height: 700 }}
+		>
 			<Typography sx={{ color: "white" }} variant="h2" gutterBottom>
 				{mensaje}
 			</Typography>
@@ -50,7 +54,7 @@ const Carrusel = ({ mensaje, info }) => {
 				{info.map((elemento) => (
 					<Cards
 						key={elemento.id}
-						titulo={elemento.title} 
+						titulo={elemento.title}
 						imagen={elemento.poster_path}
 					/>
 				))}

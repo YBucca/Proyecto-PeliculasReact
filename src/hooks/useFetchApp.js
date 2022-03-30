@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 const useFetchApp = (tipo, categoria) => {
 	const [datos, setDatos] = useState([]);
-	// const [cargando, setCargando] = useState(false);
+	const [cargando, setCargando] = useState(false);
 	useEffect(() => {
-		// setCargando(true);
+		setCargando(true);
 		fetch(
 			`https://api.themoviedb.org/3/${tipo}/${categoria}?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=es`
 		)
 			.then((res) => res.json())
 			.then((data) => setDatos(data.results));
-		// setCargando(false);
+		setCargando(false);
 		console.log("datos", datos);
 	}, []);
-	return datos;
+	return ({
+		datos: datos,
+		cargando: cargando
+	})
 };
 
 export default useFetchApp;
