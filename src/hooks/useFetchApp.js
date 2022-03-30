@@ -17,10 +17,10 @@ const useFetchApp = (tendencia, tipo, categoria) => {
 		setCargando(false);
 		console.log("datos", datos);
 	}, []);
-	return {
+	return ({
 		datos: datos,
 		cargando: cargando,
-	};
+	});
 };
 
 export default useFetchApp;
