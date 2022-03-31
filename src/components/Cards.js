@@ -10,6 +10,7 @@ const Cards = ({ titulo, imagen }) => {
 				height: 530,
 				bgcolor: "#9f86c0",
 				position: "relative",
+				m:1
 			}}
 		>
 			<CardContent>

@@ -4,9 +4,9 @@ import Slider from "react-slick";
 import Cards from "./Cards";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import { Link } from "react-router-dom";
 
-
-const Carrusel = ({ mensaje, info}) => {
+const Carrusel = ({ mensaje, info }) => {
 	const settings = {
 		dots: true,
 		infinite: false,
@@ -43,20 +43,25 @@ const Carrusel = ({ mensaje, info}) => {
 		],
 	};
 	return (
-		<Container
-			maxWidth="false"
-			sx={{ bgcolor: "#221942", height: 700 }}
-		>
+		<Container maxWidth="false" sx={{ bgcolor: "#221942", height: 700 }}>
 			<Typography sx={{ color: "white" }} variant="h2" gutterBottom>
 				{mensaje}
 			</Typography>
 			<Slider {...settings}>
 				{info.map((elemento) => (
-					<Cards
+					<Link
+						style={{
+							textDecoration: "none",
+							color: "#9f86c0",
+						}}
+						to={`/movie/${elemento.id}`}
 						key={elemento.id}
-						titulo={elemento.title}
-						imagen={elemento.poster_path}
-					/>
+					>
+						<Cards
+							titulo={elemento.title}
+							imagen={elemento.poster_path}
+						/>
+					</Link>
 				))}
 			</Slider>
 		</Container>
