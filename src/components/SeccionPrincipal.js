@@ -3,6 +3,7 @@ import useFetchApp from "../hooks/useFetchApp";
 import "../App.scss";
 import Carrusel from "./Carrusel";
 import Loader from "./Loader";
+// import CarruselDos from "./CarruselDos";
 
 const SeccionPrincipal = () => {
 	const { datos: peliculas, cargando } = useFetchApp("","movie", "popular");
