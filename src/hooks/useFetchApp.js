@@ -15,7 +15,6 @@ const useFetchApp = (tendencia, tipo, categoria) => {
 			.then((res) => res.json())
 			.then((data) => setDatos(data.results));
 		setCargando(false);
-		console.log("datos", datos);
 	}, []);
 	return ({
 		datos: datos,

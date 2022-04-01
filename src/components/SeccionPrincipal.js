@@ -17,7 +17,6 @@ const SeccionPrincipal = () => {
 
 	return (
 		<div className="home">
-			<h2>Seccion Principal</h2>
 			<Loader cargando={cargandoGeneral} />
 			
 			{!cargandoGeneral && (
