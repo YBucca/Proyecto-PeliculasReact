@@ -15,8 +15,9 @@ const Detalle = () => {
 			.then((res) => res.json())
 			.then((data) => setPelicula(data));
 	}, []);
+	console.log(pelicula?.genres)
 	return (
-		<div className="Detalle">
+		<div className="detalle">
 			<Card
 				sx={{
 					border: 1,
@@ -29,12 +30,12 @@ const Detalle = () => {
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
+					opacity:"0.5"
 					// filter:"brightness(50%)"
-					/// no me gusta
 				}}
 			>
 				<CardContent
-					sx={{ display: "flex", height: "500px",width:"900px"}}
+					sx={{ display: "flex", height: "500px",width:"900px", position:"relative", zIndex:5}}
 				>
 					<CardMedia
 						component="img"
@@ -47,9 +48,7 @@ const Detalle = () => {
 							display: "flex",
 							flexDirection: "column",
 							width: "500px",
-							bgcolor: "white",
-							opacity: 0.2,
-							//ver
+							
 						}}
 					>
 						<Typography variant="h4" gutterBottom>
@@ -72,9 +71,10 @@ const Detalle = () => {
 						</Typography>
 						{pelicula?.genres?.map((elemento) => (
 							<Typography variant="body1" gutterBottom>
-								{elemento.genres}
+								{elemento.name}
 							</Typography>
 						))}
+
 					</CardContent>
 				</CardContent>
 			</Card>
