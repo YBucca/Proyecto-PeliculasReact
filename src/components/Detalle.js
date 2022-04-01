@@ -10,7 +10,7 @@ const Detalle = () => {
 	const [pelicula, setPelicula] = useState([]);
 	useEffect(() => {
 		fetch(
-			`https://api.themoviedb.org/3/movie/${params.idPelicula}?api_key=457fa7dd417d06a0e15d7fe61f662df1`
+			`https://api.themoviedb.org/3/movie/${params.idPelicula}?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=es`
 		)
 			.then((res) => res.json())
 			.then((data) => setPelicula(data));
@@ -22,10 +22,10 @@ const Detalle = () => {
 				sx={{
 					border: 1,
 					width: "100%",
-					m: 2,
+					height: "100vh",
 					display: "flex",
 					justifyContent: "center",
-					p: "40px",
+					alignItems: "center",
 					backgroundImage: `url("https://image.tmdb.org/t/p/original/${pelicula.poster_path}")`,
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover",
@@ -33,7 +33,9 @@ const Detalle = () => {
 					/// no me gusta
 				}}
 			>
-				<CardContent sx={{ display: "flex" }}>
+				<CardContent
+					sx={{ display: "flex", height: "500px",width:"900px"}}
+				>
 					<CardMedia
 						component="img"
 						image={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
