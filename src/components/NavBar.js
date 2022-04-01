@@ -11,6 +11,7 @@ const NavBar = () => {
 		<Box
 			sx={{
 				flexGrow: 1,
+				mb:2,
 			}}
 		>
 			<AppBar

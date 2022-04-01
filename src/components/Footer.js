@@ -1,11 +1,10 @@
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const Footer = () => {
 	return (
-		<Container maxWidth="xl">
+	
 			<Box
 				sx={{
 					bgcolor: "#231942",
@@ -28,7 +27,7 @@ const Footer = () => {
 					<FavoriteIcon />
 				</Typography>
 			</Box>
-		</Container>
+	
 	);
 };
 
