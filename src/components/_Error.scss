@@ -1,0 +1,22 @@
+.card-error{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color:black;
+  color: aliceblue;
+  img{
+    width: 500px;
+    border-radius: 40%;
+  }
+  button{
+    width: 70px;
+    height: 40px;
+    background-color: #581526;
+    border: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+  }
+}

@@ -7,6 +7,7 @@ import SeccionPrincipal from "./components/SeccionPrincipal";
 import Buscar from "./components/Buscar";
 import Footer from "./components/Footer";
 import Detalle from "./components/Detalle";
+import Error from "./components/Error";
 
 const App = () => {
 	return (
@@ -16,12 +17,13 @@ const App = () => {
 				<Route path="/" element={<SeccionPrincipal />} />
 				<Route
 					path="/ultimos-lanzamientos"
-					element={< UltimosLanzamientos />}
+					element={<UltimosLanzamientos />}
 				/>
 				{/* aca hacer dos componenetes diferentes para ultimos lanzamientos y otro para populares por mas que ambos muentren mismo info con diferentes fetch */}
 				<Route path="/populares" element={<Populares />} />
 				<Route path="/movie/:idPelicula" element={<Detalle />} />
 				<Route path="/busqueda" element={<Buscar />} />
+				<Route path="*" element={<Error />} />
 			</Routes>
 			<Footer />
 		</BrowserRouter>
