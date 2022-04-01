@@ -15,7 +15,6 @@ const Detalle = () => {
 			.then((res) => res.json())
 			.then((data) => setPelicula(data));
 	}, []);
-	console.log(pelicula);
 	return (
 		<div className="Detalle">
 			<Card
@@ -30,6 +29,7 @@ const Detalle = () => {
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
+					// filter:"brightness(50%)"
 					/// no me gusta
 				}}
 			>
