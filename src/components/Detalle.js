@@ -5,6 +5,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
+import Box from "@mui/material/Box";
 const Detalle = () => {
 	const params = useParams();
 	const [pelicula, setPelicula] = useState([]);
@@ -15,9 +16,17 @@ const Detalle = () => {
 			.then((res) => res.json())
 			.then((data) => setPelicula(data));
 	}, []);
-	console.log(pelicula?.genres)
 	return (
 		<div className="detalle">
+			<Box
+				sx={{
+					height: "100%",
+					width: "100%",
+					position: "absolute",
+					backgroundColor: "black",
+					opacity: 0.5,
+				}}
+			/>
 			<Card
 				sx={{
 					border: 1,
@@ -30,12 +39,17 @@ const Detalle = () => {
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					opacity:"0.5"
-					// filter:"brightness(50%)"
 				}}
 			>
 				<CardContent
-					sx={{ display: "flex", height: "500px",width:"900px", position:"relative", zIndex:5}}
+					sx={{
+						display: "flex",
+						height: "500px",
+						width: "900px",
+						position: "relative",
+						zIndex: 5,
+						color:"white"
+					}}
 				>
 					<CardMedia
 						component="img"
@@ -48,7 +62,6 @@ const Detalle = () => {
 							display: "flex",
 							flexDirection: "column",
 							width: "500px",
-							
 						}}
 					>
 						<Typography variant="h4" gutterBottom>
@@ -74,7 +87,6 @@ const Detalle = () => {
 								{elemento.name}
 							</Typography>
 						))}
-
 					</CardContent>
 				</CardContent>
 			</Card>
