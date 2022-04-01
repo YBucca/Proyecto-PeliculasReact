@@ -19,7 +19,6 @@ const App = () => {
 					path="/ultimos-lanzamientos"
 					element={<UltimosLanzamientos />}
 				/>
-				{/* aca hacer dos componenetes diferentes para ultimos lanzamientos y otro para populares por mas que ambos muentren mismo info con diferentes fetch */}
 				<Route path="/populares" element={<Populares />} />
 				<Route path="/movie/:idPelicula" element={<Detalle />} />
 				<Route path="/busqueda" element={<Buscar />} />
