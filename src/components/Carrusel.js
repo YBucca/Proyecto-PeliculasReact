@@ -14,7 +14,6 @@ const Carrusel = ({ mensaje, info }) => {
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		initialSlide: 0,
-		// autoplay:true,
 		responsive: [
 			{
 				breakpoint: 1024,

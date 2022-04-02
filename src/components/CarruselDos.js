@@ -4,7 +4,12 @@ import Slider from "react-slick";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import CardMedia from "@mui/material/CardMedia";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import CardActions from "@mui/material/CardActions";
+import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+
 const CarruselDos = ({ mensaje, info }) => {
 	const settings = {
 		dots: true,
@@ -12,65 +17,75 @@ const CarruselDos = ({ mensaje, info }) => {
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		autoplay:true,
 	};
 	return (
-		<div>
-			<Typography sx={{ color: "white" }} variant="h2" gutterBottom>
+		<Container maxWidth="xl" sx={{ bgcolor: "#221942", mb: 5 }}>
+			<Typography sx={{ color: "white" }} variant="h3" gutterBottom>
 				{mensaje}
 			</Typography>
 			<Slider {...settings}>
 				{info.map((elemento) => (
-					<Card
-						sx={{
-							border: 1,
-							width: "100%",
-							height: "100vh",
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundImage: `url("https://image.tmdb.org/t/p/original/${elemento.poster_path}")`,
-							backgroundRepeat: "no-repeat",
-							backgroundSize: "cover",
-							backgroundPosition: "center",
-							// filter:"brightness(50%)"
-							/// no me gusta
-						}}
-					>
-						<CardContent
+					<>
+						<Card
 							sx={{
-								display: "flex",
+								border: 1,
 								height: "500px",
-								width: "900px",
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "flex-end",
+								backgroundImage: `url("https://image.tmdb.org/t/p/original/${elemento.poster_path}")`,
+								backgroundRepeat: "no-repeat",
+								backgroundSize: "cover",
+								backgroundPosition: "center",
 							}}
 						>
-							<CardMedia
-								component="img"
-								image={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
-								alt={elemento.title}
-								sx={{ width: "300px" }}
-							/>
 							<CardContent
 								sx={{
 									display: "flex",
+									width: "600px",
 									flexDirection: "column",
-									width: "500px",
-									bgcolor: "white",
-									opacity: 0.2,
-									//ver
+									justifyContent: "flex-end",
+									alignItems: "center",
+									position: "relative",
+									zIndex: 6,
+									color: "white",
 								}}
 							>
-								<Typography variant="h4" gutterBottom>
+								<Box
+									sx={{
+										height: "100%",
+										width: "100%",
+										position: "absolute",
+										backgroundColor: "white",
+										opacity: 0.2,
+									}}
+								/>
+								<Typography variant="h4" gutterBottom sx={{color:"black"}}>
 									{elemento.title}
 								</Typography>
 								<Typography variant="body1" gutterBottom>
 									{elemento.overview}
 								</Typography>
+								<CardActions>
+									<Link
+										style={{
+											textDecoration: "none",
+											color: "#9f86c0",
+										}}
+										to={`/movie/${elemento.id}`}
+									>
+										<Button variant="contained">
+											VER MAS...
+										</Button>
+									</Link>
+								</CardActions>
 							</CardContent>
-						</CardContent>
-					</Card>
+						</Card>
+					</>
 				))}
 			</Slider>
-		</div>
+		</Container>
 	);
 };
 

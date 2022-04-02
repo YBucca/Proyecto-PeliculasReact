@@ -3,7 +3,7 @@ import useFetchApp from "../hooks/useFetchApp";
 import "../App.scss";
 import Carrusel from "./Carrusel";
 import Loader from "./Loader";
-// import CarruselDos from "./CarruselDos";
+import CarruselDos from "./CarruselDos";
 
 const SeccionPrincipal = () => {
 	const { datos: peliculas, cargando } = useFetchApp("","movie", "popular");
@@ -22,7 +22,7 @@ const SeccionPrincipal = () => {
 			
 			{!cargandoGeneral && (
 				<>
-					<Carrusel
+					<CarruselDos
 						mensaje="Peliculas que son Tendencia"
 						info={peliculasTendencia}
 						cargando={cargandoGeneral}
