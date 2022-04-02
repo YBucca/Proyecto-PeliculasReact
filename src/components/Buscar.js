@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Cards from "./Cards";
+import { Link } from "react-router-dom";
 
 const Buscar = () => {
 	const [valorDelInput, setValorDelInput] = useState(""); // para hacer click en el boton enviar
@@ -37,13 +38,21 @@ const Buscar = () => {
 				onChange={handleChange}
 				value={valorDelInput}
 			></input>
-			<button onClick={handleClick}>enviar</button>
+			<button onClick={handleClick}>Buscar</button>
 			{peliculas.map((pelicula) => (
-				<Cards
+				<Link
+					style={{
+						textDecoration: "none",
+						color: "#9f86c0",
+					}}
+					to={`/movie/${pelicula.id}`}
 					key={pelicula.id}
-					titulo={pelicula.title}
-					imagen={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`}
-				/>
+				>
+					<Cards
+						titulo={pelicula.title}
+						imagen={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`}
+					/>
+				</Link>
 			))}
 		</div>
 	);
