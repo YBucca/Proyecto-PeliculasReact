@@ -14,7 +14,6 @@ const Carrusel = ({ mensaje, info }) => {
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		initialSlide: 0,
-		// autoplay:true,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -43,8 +42,8 @@ const Carrusel = ({ mensaje, info }) => {
 		],
 	};
 	return (
-		<Container maxWidth="false" sx={{ bgcolor: "#221942", height: 700 }}>
-			<Typography sx={{ color: "white" }} variant="h2" gutterBottom>
+		<Container maxWidth="xl" sx={{ bgcolor: "#221942", mb:5}}>
+			<Typography sx={{ color: "white" }} variant="h3" gutterBottom>
 				{mensaje}
 			</Typography>
 			<Slider {...settings}>
