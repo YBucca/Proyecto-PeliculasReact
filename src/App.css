@@ -22,6 +22,10 @@
   position: relative;
 }
 
+.buscador {
+  background-color: aliceblue;
+}
+
 .detalle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,7 +57,8 @@
 }
 
 .card-error img {
-  width: 500px;
+  width: 400px;
+  height: 400px;
   border-radius: 40%;
 }
 
@@ -72,5 +77,6 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 /*# sourceMappingURL=App.css.map */

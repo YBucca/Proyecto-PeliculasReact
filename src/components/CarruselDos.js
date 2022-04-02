@@ -17,7 +17,7 @@ const CarruselDos = ({ mensaje, info }) => {
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		autoplay:true,
+		autoplay: true,
 	};
 	return (
 		<Container maxWidth="xl" sx={{ bgcolor: "#221942", mb: 5 }}>
@@ -28,6 +28,7 @@ const CarruselDos = ({ mensaje, info }) => {
 				{info.map((elemento) => (
 					<>
 						<Card
+							key={elemento.id}
 							sx={{
 								border: 1,
 								height: "500px",
@@ -61,7 +62,11 @@ const CarruselDos = ({ mensaje, info }) => {
 										opacity: 0.2,
 									}}
 								/>
-								<Typography variant="h4" gutterBottom sx={{color:"black"}}>
+								<Typography
+									variant="h4"
+									gutterBottom
+									sx={{ color: "black" }}
+								>
 									{elemento.title}
 								</Typography>
 								<Typography variant="body1" gutterBottom>
