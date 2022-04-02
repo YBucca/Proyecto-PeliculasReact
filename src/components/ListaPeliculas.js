@@ -11,9 +11,10 @@ const ListaPeliculas = ({ titulo, info }) => {
 					border: "1px solid grey",
 					m: 10,
 					p: 10,
+					backgroundColor: "#9f86c0",
 				}}
 			>
-				<Typography variant="h3" gutterBottom>
+				<Typography variant="h3" gutterBottom color="text.secondary">
 					{titulo}
 				</Typography>
 
