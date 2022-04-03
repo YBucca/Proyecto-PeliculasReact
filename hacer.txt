@@ -1,0 +1,20 @@
+para peliculas que son tendencia
+
+/trending/movie/week?
+
+ultimos lanzamientos 
+/upcoming
+
+populares
+/popular
+
+mejor puntuadas
+/top_rated
+
+busquedad
+/search/movie?
+
+## deploy clase 112
+
+
+## imagen de fondo transparente para el loader ?

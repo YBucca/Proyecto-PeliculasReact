@@ -22,6 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/hacer.txt
+/hacer.txt/
 
-/Series.js
+/src/components/Series.js
