@@ -13,7 +13,7 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 			<Typography variant="h5">
 				{titulo}
 			</Typography>
-			<Stack spacing={6}>
+			<Stack spacing={1}>
 				<Rating
 					name="half-rating-read"
 					defaultValue={puntaje}

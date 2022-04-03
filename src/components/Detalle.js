@@ -6,6 +6,8 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
+import Stack from "@mui/material/Stack";
 const Detalle = () => {
 	const params = useParams();
 	const [pelicula, setPelicula] = useState([]);
@@ -16,6 +18,7 @@ const Detalle = () => {
 			.then((res) => res.json())
 			.then((data) => setPelicula(data));
 	}, []);
+	console.log("detalle", pelicula)
 	return (
 		<div className="detalle">
 			<Box
@@ -48,7 +51,7 @@ const Detalle = () => {
 						width: "900px",
 						position: "relative",
 						zIndex: 5,
-						color:"white"
+						color: "white",
 					}}
 				>
 					<CardMedia
@@ -67,6 +70,15 @@ const Detalle = () => {
 						<Typography variant="h4" gutterBottom>
 							{pelicula.title}
 						</Typography>
+						<Stack spacing={1}>
+							<Rating
+								name="half-rating-read"
+								defaultValue={pelicula.vote_average}
+								precision={0.5}
+								readOnly
+							/> 
+							{/* VER PORQUE NO FUNCIONA */}
+						</Stack>
 						<Typography variant="body1" gutterBottom>
 							{pelicula.overview}
 						</Typography>
