@@ -1,10 +1,21 @@
 @import './components/Peliculas';
 @import './components/Detalle';
 @import './components/Error';
+@import './components/config';
 
-body{
+
+*{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.modo-oscuro{
   background-color: black;
+  color:white;
+}
+
+.modo-claro{
+  background-color: azure;
+  color:black;
 }

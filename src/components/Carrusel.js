@@ -4,6 +4,9 @@ import Slider from "react-slick";
 import Cards from "./Cards";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Fab from "@mui/material/Fab";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 
 const Carrusel = ({ mensaje, info }) => {
@@ -42,10 +45,28 @@ const Carrusel = ({ mensaje, info }) => {
 		],
 	};
 	return (
-		<Container maxWidth="xl" sx={{ bgcolor: "#221942", mb:5}}>
-			<Typography sx={{ color: "white" }} variant="h3" gutterBottom>
-				{mensaje}
-			</Typography>
+		<Container maxWidth="xl" sx={{ bgcolor: "#221942", mb: 5, p:5 }}>
+			<Box >
+				<Typography
+					sx={{ color: "white", ml: 2 }}
+					variant="h3"
+					gutterBottom
+				>
+					{mensaje}
+				</Typography>
+				<Link
+					style={{
+						textDecoration: "none",
+						color: "#9f86c0",
+					}}
+					to="/populares"
+				>
+					<Fab size="small" color="secondary" aria-label="add">
+						<ArrowForwardIosIcon />
+					</Fab>
+				</Link>
+			</Box>
+
 			<Slider {...settings}>
 				{info.map((elemento) => (
 					<Link

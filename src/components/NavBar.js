@@ -5,13 +5,22 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
+import { useContext } from "react";
+import Context from "../context/Context";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import NightlightIcon from "@mui/icons-material/Nightlight";
+import IconButton from "@mui/material/IconButton";
 
 const NavBar = () => {
+	const context = useContext(Context);
+	const handleClick = () => {
+		context.setModoClaro(!context.modoClaro);
+	};
 	return (
 		<Box
 			sx={{
 				flexGrow: 1,
-				mb:2,
+				mb: 2,
 			}}
 		>
 			<AppBar
@@ -50,7 +59,7 @@ const NavBar = () => {
 								}}
 								to="/ultimos-lanzamientos"
 							>
-								Ultimos Lanzamientos
+								Últimos Lanzamientos
 							</Link>
 						</ListItem>
 						<ListItem button>
@@ -76,10 +85,21 @@ const NavBar = () => {
 							</Link>
 						</ListItem>
 					</List>
+					<IconButton
+						color="secondary"
+						aria-label="cambio de tema oscuro a claro"
+						onClick={handleClick}
+					>
+						{context.modoClaro ? (
+							<NightlightIcon />
+						) : (
+							<LightModeIcon />
+						)}
+					</IconButton>
+					
 				</Toolbar>
 			</AppBar>
 		</Box>
-		
 	);
 };
 export default NavBar;

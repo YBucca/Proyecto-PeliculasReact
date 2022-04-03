@@ -72,11 +72,20 @@
   color: white;
 }
 
-body {
+* {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.modo-oscuro {
   background-color: black;
+  color: white;
+}
+
+.modo-claro {
+  background-color: azure;
+  color: black;
 }
 /*# sourceMappingURL=App.css.map */

@@ -21,9 +21,7 @@ const CarruselDos = ({ mensaje, info }) => {
 	};
 	return (
 		<Container maxWidth="xl" sx={{ bgcolor: "#221942", mb: 5 }}>
-			<Typography sx={{ color: "white" }} variant="h3" gutterBottom>
-				{mensaje}
-			</Typography>
+		
 			<Slider {...settings}>
 				{info.map((elemento) => (
 					<>

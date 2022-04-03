@@ -8,16 +8,13 @@ const ListaPeliculas = ({ titulo, info }) => {
 			<Box
 				sx={{
 					width:"800px",
+					height:"500px",
 					border: "1px solid grey",
-					m: 10,
 					p: 10,
 					backgroundColor: "#9f86c0",
+					overflowY:"scroll"
 				}}
 			>
-				<Typography variant="h3" gutterBottom color="text.secondary">
-					{titulo}
-				</Typography>
-
 				{info.map((elemento) => (
 					<ListaItem
 						key={elemento.id}

@@ -8,7 +8,7 @@ const Cards = ({ titulo, imagen }) => {
 			sx={{
 				width: 330,
 				height: 530,
-				bgcolor: "#9f86c0",
+				bgcolor: "transparent",
 				position: "relative",
 				m: 1,
 			}}
