@@ -3,13 +3,26 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Fab from "@mui/material/Fab";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import Rating from "@mui/material/Rating";
+import Stack from "@mui/material/Stack";
 import { Link } from "react-router-dom";
-const ListaItem = ({ titulo, imagen, link }) => {
+const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 	return (
-		<Box sx={{ display: "flex", p: 1, alignItems: "center" }}>
+		<Box sx={{ display: "flex", p: 1, alignItems: "center", justifyContent:"space-between"}}>
 			<Avatar alt={titulo} src={imagen} />
-			<Typography variant="h5" sx={{ p: 2 }}>
+			<Typography variant="h5">
 				{titulo}
+			</Typography>
+			<Stack spacing={6}>
+				<Rating
+					name="half-rating-read"
+					defaultValue={puntaje}
+					precision={0.5}
+					readOnly
+				/>
+			</Stack>
+			<Typography variant="h6" sx={{ p: 2 }}>
+				{puntaje}
 			</Typography>
 			<Link
 				to={`/movie/${link}`}

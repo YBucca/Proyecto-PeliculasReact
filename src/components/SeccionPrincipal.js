@@ -15,7 +15,7 @@ const SeccionPrincipal = () => {
 		"week"
 	);
 	const cargandoGeneral = cargando || cargandoMejorPuntadas || cargandoTendencia;
-
+ console.log(mejorPuntuadas,"mejor puntuadas")
 	return (
 		<div className="home">
 			<Loader cargando={cargandoGeneral} />
