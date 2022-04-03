@@ -7,6 +7,7 @@ const ListaPeliculas = ({ titulo, info }) => {
 		<>
 			<Box
 				sx={{
+					width:"800px",
 					border: "1px solid grey",
 					m: 10,
 					p: 10,
@@ -23,6 +24,7 @@ const ListaPeliculas = ({ titulo, info }) => {
 						titulo={elemento.title}
 						imagen={`https://image.tmdb.org/t/p/w300/${elemento.poster_path}`}
 						link={elemento.id}
+						puntaje={elemento.vote_average}
 					/>
 				))}
 			</Box>
