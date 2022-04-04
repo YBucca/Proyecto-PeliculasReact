@@ -10,7 +10,7 @@ import CardActions from "@mui/material/CardActions";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 
-const CarruselDos = ({ mensaje, info }) => {
+const CarruselDos = ({ info }) => {
 	const settings = {
 		dots: true,
 		infinite: true,
@@ -21,12 +21,10 @@ const CarruselDos = ({ mensaje, info }) => {
 	};
 	return (
 		<Container maxWidth="xl" sx={{ bgcolor: "transparent", mb: 5 }}>
-		
 			<Slider {...settings}>
 				{info.map((elemento) => (
-					<>
+					<div key={elemento.id}>
 						<Card
-							key={elemento.id}
 							sx={{
 								border: 1,
 								height: "500px",
@@ -85,7 +83,7 @@ const CarruselDos = ({ mensaje, info }) => {
 								</CardActions>
 							</CardContent>
 						</Card>
-					</>
+					</div>
 				))}
 			</Slider>
 		</Container>
