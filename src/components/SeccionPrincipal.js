@@ -36,7 +36,7 @@ const SeccionPrincipal = () => {
 						info={peliculas}
 						cargando={cargandoGeneral}
 					/>
-					<Container maxWidth="xl" sx={{ bgcolor: "#221942", mb: 5 , display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center",p:5}}>
+					<Container maxWidth="xl" sx={{ bgcolor: context.modoClaro ? "modo-claro": "modo-oscuro", mb: 5 , display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center",p:5}}>
 						<Typography
 							variant="h3"
 							gutterBottom

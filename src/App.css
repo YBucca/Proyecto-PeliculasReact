@@ -5,7 +5,6 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-color: #250130;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

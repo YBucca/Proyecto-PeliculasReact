@@ -8,8 +8,11 @@ import Fab from "@mui/material/Fab";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import Context from "../context/Context";
 
 const Carrusel = ({ mensaje, info }) => {
+	const context = useContext(Context);
 	const settings = {
 		dots: true,
 		infinite: false,
@@ -45,23 +48,30 @@ const Carrusel = ({ mensaje, info }) => {
 		],
 	};
 	return (
-		<Container maxWidth="xl" sx={{ bgcolor: "#221942", mb: 5, p:5 }}>
-			<Box >
-				<Typography
-					sx={{ color: "white", ml: 2 }}
-					variant="h3"
-					gutterBottom
-				>
-					{mensaje}
-				</Typography>
+		<Container
+			maxWidth="xl"
+			sx={{
+				bgcolor: context.modoClaro ? "modo-claro" : "modo-oscuro",
+				mb: 5,
+				p: 5,
+			}}
+		>
+			<Box sx={{ display: "flex", alignItems: "center",p:2 }}>
+				<Typography variant="h3">{mensaje}</Typography>
 				<Link
 					style={{
 						textDecoration: "none",
-						color: "#9f86c0",
+						color: "white",
 					}}
+					// VER PORQUE NO FUNCIONAN LOS ESTILOS EN LINEA DE LOS LINKS CON MALE
 					to="/populares"
 				>
-					<Fab size="small" color="secondary" aria-label="add">
+					<Fab
+						size="small"
+						color="secondary"
+						aria-label="ir a películas populares"
+						sx={{ml:3}}
+					>
 						<ArrowForwardIosIcon />
 					</Fab>
 				</Link>
