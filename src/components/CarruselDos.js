@@ -20,7 +20,7 @@ const CarruselDos = ({ mensaje, info }) => {
 		autoplay: true,
 	};
 	return (
-		<Container maxWidth="xl" sx={{ bgcolor: "#221942", mb: 5 }}>
+		<Container maxWidth="xl" sx={{ bgcolor: "transparent", mb: 5 }}>
 		
 			<Slider {...settings}>
 				{info.map((elemento) => (

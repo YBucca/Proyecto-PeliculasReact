@@ -48,7 +48,7 @@ const Detalle = () => {
 					sx={{
 						display: "flex",
 						height: "500px",
-						width: "900px",
+						width: "1000px",
 						position: "relative",
 						zIndex: 5,
 						color: "white",
@@ -58,7 +58,7 @@ const Detalle = () => {
 						component="img"
 						image={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
 						alt={pelicula.title}
-						sx={{ width: "300px" }}
+						sx={{ width: "400px", height: "600px" }}
 					/>
 					<CardContent
 						sx={{
@@ -76,8 +76,8 @@ const Detalle = () => {
 								defaultValue={pelicula.vote_average}
 								precision={0.5}
 								readOnly
-							/> 
-							{/* VER PORQUE NO FUNCIONA */}
+							/>
+							{/* VER PORQUE NO FUNCIONA CON MALE*/}
 						</Stack>
 						<Typography variant="body1" gutterBottom>
 							{pelicula.overview}
@@ -94,11 +94,16 @@ const Detalle = () => {
 								{pelicula.homepage}
 							</a>
 						</Typography>
-						{pelicula?.genres?.map((elemento) => (
+						<Stack spacing={1} direction="row">
 							<Typography variant="body1" gutterBottom>
-								{elemento.name}
+								Género:
 							</Typography>
-						))}
+							{pelicula?.genres?.map((elemento) => (
+								<Typography variant="body1" gutterBottom>
+									{elemento.name}
+								</Typography>
+							))}
+						</Stack>
 					</CardContent>
 				</CardContent>
 			</Card>

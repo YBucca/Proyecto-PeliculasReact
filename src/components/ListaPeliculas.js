@@ -1,8 +1,7 @@
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import ListaItem from "./ListaItem";
 
-const ListaPeliculas = ({ titulo, info }) => {
+const ListaPeliculas = ({  info }) => {
 	return (
 		<>
 			<Box
