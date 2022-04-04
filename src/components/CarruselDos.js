@@ -10,7 +10,7 @@ import CardActions from "@mui/material/CardActions";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 
-const CarruselDos = ({ mensaje, info }) => {
+const CarruselDos = ({ info }) => {
 	const settings = {
 		dots: true,
 		infinite: true,
