@@ -3,13 +3,19 @@ import { Link } from "react-router-dom";
 import useFetchApp from "../hooks/useFetchApp";
 import Cards from "./Cards";
 import Loader from "./Loader";
+import { useState } from "react";
+import Paginado from "./Paginado";
 const UltimosLanzamientos = () => {
-		const { datos: peliculas, cargando } = useFetchApp(
+	const [page, setPage] = useState(1);
+		const { datos: peliculas, cargando , totalPages} = useFetchApp(
 			"",
 			"movie",
-			"upcoming"
+			"upcoming",
+			page
 		);
-
+			const handleChange = (event, value) => {
+				setPage(value);
+			};
 	return (
 		<>
 			<Loader cargando={cargando} />
@@ -30,6 +36,11 @@ const UltimosLanzamientos = () => {
 							/>
 						</Link>
 					))}
+					<Paginado
+						handleChange={handleChange}
+						page={page}
+						totalPages={totalPages > 500 ? 500 : totalPages}
+					/>
 				</div>
 			)}
 		</>

@@ -4,7 +4,7 @@ const Paginado = ({ handleChange, page, totalPages }) => {
 		<div>
 			<Pagination
 				count={totalPages}
-				color="primary"
+				color="secondary"
 				page={page}
 				onChange={handleChange}
 			/>
