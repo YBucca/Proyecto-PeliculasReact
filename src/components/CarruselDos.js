@@ -21,12 +21,10 @@ const CarruselDos = ({ info }) => {
 	};
 	return (
 		<Container maxWidth="xl" sx={{ bgcolor: "transparent", mb: 5 }}>
-		
 			<Slider {...settings}>
 				{info.map((elemento) => (
-					<>
+					<div key={elemento.id}>
 						<Card
-							key={elemento.id}
 							sx={{
 								border: 1,
 								height: "500px",
@@ -85,7 +83,7 @@ const CarruselDos = ({ info }) => {
 								</CardActions>
 							</CardContent>
 						</Card>
-					</>
+					</div>
 				))}
 			</Slider>
 		</Container>

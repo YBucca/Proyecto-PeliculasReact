@@ -1,4 +1,4 @@
-import Pagination from "@material-ui/lab/Pagination";
+import Pagination from "@mui/material/Pagination";
 const Paginado = ({ handleChange, page, totalPages }) => {
 	return (
 		<div>
@@ -13,14 +13,3 @@ const Paginado = ({ handleChange, page, totalPages }) => {
 };
 
 export default Paginado;
-
-{
-	/* <div>
-			<button onClick={handleClickPrev} disabled={page === 1}>
-				prev
-			</button>
-			<button onClick={handleClickNext}>
-				next
-			</button>
-		</div> */
-}

@@ -10,13 +10,14 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 const SeccionPrincipal = () => {
-	const { datos: peliculas, cargando } = useFetchApp("","movie", "popular");
+	const { datos: peliculas, cargando } = useFetchApp("","movie", "popular", 1);
 	const { datos: mejorPuntuadas, cargando: cargandoMejorPuntadas } =
-		useFetchApp("","movie", "top_rated");
+		useFetchApp("","movie", "top_rated", 1);
 	const { datos: peliculasTendencia, cargando: cargandoTendencia } = useFetchApp(
 		"trending",
 		"movie",
-		"week"
+		"week",
+		1
 	);
 	const context = useContext(Context);
 	const cargandoGeneral = cargando || cargandoMejorPuntadas || cargandoTendencia;
