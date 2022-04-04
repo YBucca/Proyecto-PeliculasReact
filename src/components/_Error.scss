@@ -1,24 +1,31 @@
-.card-error{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  background-color:black;
-  padding: 15px;
-  color: white;
-  img{
-    width: 400px;
-    height: 400px;
-    border-radius: 40%;
-  }
-  button{
-    width: 70px;
-    height: 40px;
-    background-color: #581526;
-    border: transparent;
-    border-radius: 5px;
-    font-weight: bold;
-    color: white;
-  }
+@import "config";
+
+.card-error {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	background-color: $oscuro;
+	padding: 15px;
+	color: $claro;
+	img {
+		width: 400px;
+		height: 400px;
+		border-radius: 40%;
+	}
+	h1 {
+		font-size: 45px;
+		margin: 20px;
+	}
+	button {
+		width: 70px;
+		height: 40px;
+		background-color: $btn-error;
+		border: transparent;
+		border-radius: 5px;
+		font-weight: bold;
+		color: $claro;
+		margin: 20px;
+	}
 }

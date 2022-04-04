@@ -50,15 +50,20 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: black;
+  background-color: #000000;
   padding: 15px;
-  color: white;
+  color: #ffffff;
 }
 
 .card-error img {
   width: 400px;
   height: 400px;
   border-radius: 40%;
+}
+
+.card-error h1 {
+  font-size: 45px;
+  margin: 20px;
 }
 
 .card-error button {
@@ -68,7 +73,8 @@
   border: transparent;
   border-radius: 5px;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
+  margin: 20px;
 }
 
 * {
@@ -79,12 +85,12 @@
 }
 
 .modo-oscuro {
-  background-color: black;
-  color: white;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .modo-claro {
-  background-color: azure;
-  color: black;
+  background-color: #ffffff;
+  color: #000000;
 }
 /*# sourceMappingURL=App.css.map */
