@@ -38,7 +38,7 @@ const Detalle = () => {
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
-					backgroundImage: `url("https://image.tmdb.org/t/p/original/${pelicula.poster_path}")`,
+					backgroundImage: `url("https://image.tmdb.org/t/p/original/${pelicula.backdrop_path}")`,
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover",
 					backgroundPosition: "center",

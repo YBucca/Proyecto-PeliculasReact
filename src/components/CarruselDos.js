@@ -20,7 +20,7 @@ const CarruselDos = ({ info }) => {
 		autoplay: true,
 	};
 	return (
-		<Container maxWidth="xl" sx={{ bgcolor: "transparent", mb: 5 }}>
+		<Container maxWidth="xl" sx={{ bgcolor: "transparent", mb: 2 }}>
 			<Slider {...settings}>
 				{info.map((elemento) => (
 					<div key={elemento.id}>
@@ -31,10 +31,10 @@ const CarruselDos = ({ info }) => {
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "flex-end",
-								backgroundImage: `url("https://image.tmdb.org/t/p/original/${elemento.poster_path}")`,
+								backgroundImage: `url("https://image.tmdb.org/t/p/original/${elemento.backdrop_path}")`,
 								backgroundRepeat: "no-repeat",
 								backgroundSize: "cover",
-								backgroundPosition: "center",
+								backgroundPosition:"center",
 							}}
 						>
 							<CardContent
