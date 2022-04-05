@@ -18,7 +18,7 @@ const Detalle = () => {
 			.then((res) => res.json())
 			.then((data) => setPelicula(data));
 	}, []);
-	console.log("detalle", pelicula)
+	console.log("detalle", pelicula);
 	return (
 		<div className="detalle">
 			<Box
@@ -64,7 +64,7 @@ const Detalle = () => {
 						sx={{
 							display: "flex",
 							flexDirection: "column",
-							width: "500px",
+							width: "600px",
 						}}
 					>
 						<Typography variant="h4" gutterBottom>
@@ -79,6 +79,9 @@ const Detalle = () => {
 							/>
 							{/* VER PORQUE NO FUNCIONA CON MALE*/}
 						</Stack>
+						<Typography variant="body1" gutterBottom>
+							Duración : {pelicula.runtime} minutos.
+						</Typography>
 						<Typography variant="body1" gutterBottom>
 							{pelicula.overview}
 						</Typography>
