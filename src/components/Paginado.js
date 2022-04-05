@@ -11,7 +11,6 @@ const Paginado = ({ handleChange, page, totalPages }) => {
 				color="secondary"
 				page={page}
 				onChange={handleChange}
-				sx={{ color: "white" }}
 			/>
 		</Box>
 	);
