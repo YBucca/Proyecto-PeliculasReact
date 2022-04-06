@@ -29,6 +29,7 @@ const Cards = ({ titulo, imagen }) => {
 					sx={{
 						mt: 2,
 						color: context.modoClaro ? "modo-claro" : "white",
+						textDecoration:"none"
 					}}
 				>
 					{titulo}

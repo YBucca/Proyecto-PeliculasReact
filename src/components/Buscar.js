@@ -1,35 +1,37 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Cards from "./Cards";
 import Paginado from "./Paginado";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import { FormControl, InputLabel, Input, Button } from "@mui/material";
-import useFetchApp from "../hooks/useFetchApp";
 import { useContext } from "react";
 import Context from "../context/Context";
 const Buscar = () => {
 	const context = useContext(Context);
+	const navigate = useNavigate();
 	const [page, setPage] = useState(1);
 	const [valorDelInput, setValorDelInput] = useState("");
 	const [peliculas, setPeliculas] = useState([]);
 	const [searchParams, setSearchParams] = useSearchParams({ query: "" });
-	const [totalPaginas, setTotalPaginas] = useState(1)
+	const [totalPaginas, setTotalPaginas] = useState(1);
 	useEffect(() => {
-		fetch(
-			`https://api.themoviedb.org/3/search/movie?api_key=457fa7dd417d06a0e15d7fe61f662df1&query=${searchParams.get(
-				"query"
-			)}&page=${page}`
-		)
-			.then((res) => res.json())
-			.then((data) => {
-				if (data.results) {
-					setPeliculas(data.results);
-					setTotalPaginas(data.total_pages);
-				} else {
-				}
-				// para que al buscar algo que no sea de la api , no se actualice y se borre todo. hacer una imagen de error
-			});
+		if (searchParams.get("query")) {
+			fetch(
+				`https://api.themoviedb.org/3/search/movie?api_key=457fa7dd417d06a0e15d7fe61f662df1&query=${searchParams.get(
+					"query"
+				)}&page=${page}`
+			)
+				.then((res) => res.json())
+				.then((data) => {
+					if (data.results) {
+						setPeliculas(data.results);
+						setTotalPaginas(data.total_pages);
+					} else {
+						navigate("/Error");
+					}
+				});
+		}
 	}, [searchParams, page]);
 	const handleChange = (event, value) => {
 		setPage(value);
@@ -53,7 +55,7 @@ const Buscar = () => {
 			>
 				<Grid item md={12}>
 					<FormControl sx={{ width: "50%" }}>
-						<InputLabel htmlFor="my-input">
+						<InputLabel htmlFor="input-busqueda">
 							Ingresá una película
 						</InputLabel>
 						<Input
@@ -86,7 +88,11 @@ const Buscar = () => {
 					>
 						<Cards
 							titulo={pelicula.title}
-							imagen={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`}
+							imagen={`https://image.tmdb.org/t/p/w300/${
+								pelicula.poster_path
+									? pelicula.poster_path
+									: "imagen no encontrada"
+							}`}
 						/>
 					</Link>
 				))}

@@ -63,7 +63,6 @@ const Carrusel = ({ mensaje, info }) => {
 						textDecoration: "none",
 						color: "white",
 					}}
-					// VER PORQUE NO FUNCIONAN LOS ESTILOS EN LINEA DE LOS LINKS CON MALE
 					to="/populares"
 				>
 					<Fab

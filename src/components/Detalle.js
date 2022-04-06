@@ -20,7 +20,7 @@ const Detalle = () => {
 	}, []);
 	console.log("detalle", pelicula);
 	return (
-		<div className="detalle" key={pelicula.id}>
+		<div className="detalle">
 			<Box
 				sx={{
 					height: "100%",
@@ -101,7 +101,7 @@ const Detalle = () => {
 								Género:
 							</Typography>
 							{pelicula?.genres?.map((elemento) => (
-								<Typography variant="body1" gutterBottom>
+								<Typography variant="body1" gutterBottom key={elemento.id}>
 									{elemento.name}
 								</Typography>
 							))}
