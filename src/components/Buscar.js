@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import { FormControl, InputLabel, Input, Button } from "@mui/material";
 import useFetchApp from "../hooks/useFetchApp";
+import { useContext } from "react";
+import Context from "../context/Context";
 const Buscar = () => {
+	const context = useContext(Context);
 	const [page, setPage] = useState(1);
 	const [valorDelInput, setValorDelInput] = useState("");
 	const [peliculas, setPeliculas] = useState([]);
@@ -41,7 +44,13 @@ const Buscar = () => {
 	};
 	return (
 		<>
-			<Grid container sx={{ p: 3 }}>
+			<Grid
+				container
+				sx={{
+					p: 3,
+					bgcolor: context.modoClaro ? "transparent" : "#9f86c0",
+				}}
+			>
 				<Grid item md={12}>
 					<FormControl sx={{ width: "50%" }}>
 						<InputLabel htmlFor="my-input">
