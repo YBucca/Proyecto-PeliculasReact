@@ -1,11 +1,15 @@
 @import "config";
 
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .card-error {
 	height: 100vh;
-	display: flex;
-	align-items: center;
+	@include flex-center();
 	flex-direction: column;
-	justify-content: center;
 	background-color: $oscuro;
 	padding: 15px;
 	color: $claro;

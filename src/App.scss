@@ -1,5 +1,4 @@
 @import "./components/Peliculas";
-@import "./components/Detalle";
 @import "./components/Error";
 @import "./components/config";
 
@@ -8,7 +7,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 .modo-oscuro {
 	background-color: $oscuro;
 	color: $claro;

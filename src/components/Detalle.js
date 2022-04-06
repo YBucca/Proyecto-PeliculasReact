@@ -58,7 +58,7 @@ const Detalle = () => {
 						component="img"
 						image={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
 						alt={pelicula.title}
-						sx={{ width: "400px", height: "600px" }}
+						sx={{ width: "400px", height: "550px" }}
 					/>
 					<CardContent
 						sx={{
