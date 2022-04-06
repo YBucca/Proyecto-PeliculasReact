@@ -1,39 +1,37 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Cards from "./Cards";
+import Paginado from "./Paginado";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
-import {
-	FormControl,
-	InputLabel,
-	Input,
-	Button,
-} from "@mui/material";
-
-
-
+import { FormControl, InputLabel, Input, Button } from "@mui/material";
+import useFetchApp from "../hooks/useFetchApp";
 const Buscar = () => {
-	const [valorDelInput, setValorDelInput] = useState(""); // para hacer click en el boton enviar
+	const [page, setPage] = useState(1);
+	const [valorDelInput, setValorDelInput] = useState("");
 	const [peliculas, setPeliculas] = useState([]);
 	const [searchParams, setSearchParams] = useSearchParams({ query: "" });
+	const { datos, cargando, totalPages } = useFetchApp("", "", "", page);
+/// ver useFetchApp error en consola 
 	useEffect(() => {
 		fetch(
 			`https://api.themoviedb.org/3/search/movie?api_key=457fa7dd417d06a0e15d7fe61f662df1&query=${searchParams.get(
 				"query"
-			)}`
+			)}&page=${page}`
 		)
 			.then((res) => res.json())
 			.then((data) => {
 				if (data.results) {
 					setPeliculas(data.results);
-				}else {
-
+				} else {
 				}
 				// para que al buscar algo que no sea de la api , no se actualice y se borre todo. hacer una imagen de error
 			});
-	}, [searchParams]);
-
-	const handleChange = (e) => {
+	}, [searchParams, page]);
+	const handleChange = (event, value) => {
+		setPage(value);
+	};
+	const handleChangeInput = (e) => {
 		setValorDelInput(e.target.value);
 	};
 	const handleClick = (e) => {
@@ -52,7 +50,7 @@ const Buscar = () => {
 						<Input
 							id="buscador"
 							aria-describedby="buscador-peliculas"
-							onChange={handleChange}
+							onChange={handleChangeInput}
 							value={valorDelInput}
 						/>
 					</FormControl>
@@ -68,13 +66,6 @@ const Buscar = () => {
 				</Grid>
 			</Grid>
 			<div className="buscador">
-				{/* Buscar peliculas
-			<input
-				type="text"
-				onChange={handleChange}
-				value={valorDelInput}
-			></input> */}
-				{/* <button onClick={handleClick}>Buscar</button> */}
 				{peliculas.map((pelicula) => (
 					<Link
 						style={{
@@ -90,6 +81,11 @@ const Buscar = () => {
 						/>
 					</Link>
 				))}
+				<Paginado
+					handleChange={handleChange}
+					page={page}
+					totalPages={totalPages > 500 ? 500 : totalPages}
+				/>
 			</div>
 		</>
 	);
