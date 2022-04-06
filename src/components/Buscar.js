@@ -14,8 +14,7 @@ const Buscar = () => {
 	const [valorDelInput, setValorDelInput] = useState("");
 	const [peliculas, setPeliculas] = useState([]);
 	const [searchParams, setSearchParams] = useSearchParams({ query: "" });
-	const { datos, cargando, totalPages } = useFetchApp("", "", "", page);
-/// ver useFetchApp error en consola 
+	const [totalPaginas, setTotalPaginas] = useState(1)
 	useEffect(() => {
 		fetch(
 			`https://api.themoviedb.org/3/search/movie?api_key=457fa7dd417d06a0e15d7fe61f662df1&query=${searchParams.get(
@@ -26,6 +25,7 @@ const Buscar = () => {
 			.then((data) => {
 				if (data.results) {
 					setPeliculas(data.results);
+					setTotalPaginas(data.total_pages);
 				} else {
 				}
 				// para que al buscar algo que no sea de la api , no se actualice y se borre todo. hacer una imagen de error
@@ -93,7 +93,7 @@ const Buscar = () => {
 				<Paginado
 					handleChange={handleChange}
 					page={page}
-					totalPages={totalPages > 500 ? 500 : totalPages}
+					totalPages={totalPaginas > 500 ? 500 : totalPaginas}
 				/>
 			</div>
 		</>

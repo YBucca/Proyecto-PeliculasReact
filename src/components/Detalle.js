@@ -20,7 +20,7 @@ const Detalle = () => {
 	}, []);
 	console.log("detalle", pelicula);
 	return (
-		<div className="detalle">
+		<div className="detalle" key={pelicula.id}>
 			<Box
 				sx={{
 					height: "100%",
@@ -77,7 +77,6 @@ const Detalle = () => {
 								precision={0.5}
 								readOnly
 							/>
-							{/* VER PORQUE NO FUNCIONA CON MALE*/}
 						</Stack>
 						<Typography variant="body1" gutterBottom>
 							Duración : {pelicula.runtime} minutos.
