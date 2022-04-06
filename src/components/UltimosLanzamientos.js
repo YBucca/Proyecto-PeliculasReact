@@ -10,7 +10,7 @@ const UltimosLanzamientos = () => {
 		const { datos: peliculas, cargando , totalPages} = useFetchApp(
 			"",
 			"movie",
-			"upcoming",
+			"now_playing",
 			page
 		);
 			const handleChange = (event, value) => {
