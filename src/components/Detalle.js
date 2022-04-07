@@ -20,7 +20,7 @@ const Detalle = () => {
 	}, []);
 	console.log("detalle", pelicula);
 	return (
-		<div className="detalle">
+		<div className="detalle" key={pelicula.id}>
 			<Box
 				sx={{
 					height: "100%",
