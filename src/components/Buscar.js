@@ -77,26 +77,28 @@ const Buscar = () => {
 					</Button>
 				</Grid>
 			</Grid>
-			<div className="buscador">
-				{peliculas.map((pelicula) => (
-					<Link
-						style={{
-							textDecoration: "none",
-							color: "#9f86c0",
-						}}
-						to={`/movie/${pelicula.id}`}
-						key={pelicula.id}
-					>
-						<Cards
-							titulo={pelicula.title}
-							imagen={
-								pelicula.poster_path
-									? `https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`
-									: imagen
-							}
-						/>
-					</Link>
-				))}
+			<div className="contenedor-busqueda">
+				<div className="buscador">
+					{peliculas.map((pelicula) => (
+						<Link
+							style={{
+								textDecoration: "none",
+								color: "#9f86c0",
+							}}
+							to={`/movie/${pelicula.id}`}
+							key={pelicula.id}
+						>
+							<Cards
+								titulo={pelicula.title}
+								imagen={
+									pelicula.poster_path
+										? `https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`
+										: imagen
+								}
+							/>
+						</Link>
+					))}
+				</div>
 				<Paginado
 					handleChange={handleChange}
 					page={page}
