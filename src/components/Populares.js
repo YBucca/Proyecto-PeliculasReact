@@ -34,7 +34,7 @@ const Populares = () => {
 						>
 							<Cards
 								titulo={pelicula.title}
-								imagen={pelicula.poster_path}
+								imagen={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`}
 							/>
 						</Link>
 					))}

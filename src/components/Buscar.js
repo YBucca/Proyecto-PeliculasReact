@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import { FormControl, InputLabel, Input, Button } from "@mui/material";
 import { useContext } from "react";
 import Context from "../context/Context";
+import imagen from "../assets/imagen-not-found.webp";
 const Buscar = () => {
 	const context = useContext(Context);
 	const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Buscar = () => {
 			)
 				.then((res) => res.json())
 				.then((data) => {
-					if (data.results) {
+					if (data.results?.length) {
 						setPeliculas(data.results);
 						setTotalPaginas(data.total_pages);
 					} else {
@@ -88,11 +89,11 @@ const Buscar = () => {
 					>
 						<Cards
 							titulo={pelicula.title}
-							imagen={`https://image.tmdb.org/t/p/w300/${
+							imagen={
 								pelicula.poster_path
-									? pelicula.poster_path
-									: "imagen no encontrada"
-							}`}
+									? `https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`
+									: imagen
+							}
 						/>
 					</Link>
 				))}

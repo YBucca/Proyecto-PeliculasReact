@@ -88,7 +88,7 @@ const Carrusel = ({ mensaje, info }) => {
 					>
 						<Cards
 							titulo={elemento.title}
-							imagen={elemento.poster_path}
+							imagen={`https://image.tmdb.org/t/p/w300/${elemento.poster_path}`}
 						/>
 					</Link>
 				))}

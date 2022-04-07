@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import { useContext } from "react";
 import Context from "../context/Context";
 const Cards = ({ titulo, imagen }) => {
-		const context = useContext(Context);
+	const context = useContext(Context);
 	return (
 		<Card
 			sx={{
@@ -20,7 +20,7 @@ const Cards = ({ titulo, imagen }) => {
 				<CardMedia
 					sx={{ width: "100%", height: "440px" }}
 					component="img"
-					image={`https://image.tmdb.org/t/p/w300/${imagen}`}
+					image={imagen}
 					alt={`Poster de ${titulo}`}
 				/>
 				<Typography
@@ -29,7 +29,7 @@ const Cards = ({ titulo, imagen }) => {
 					sx={{
 						mt: 2,
 						color: context.modoClaro ? "modo-claro" : "white",
-						textDecoration:"none"
+						textDecoration: "none",
 					}}
 				>
 					{titulo}
