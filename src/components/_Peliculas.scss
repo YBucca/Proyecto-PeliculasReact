@@ -1,8 +1,10 @@
+@import "Error";
+
 .container {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-  justify-content: center;
+	justify-content: center;
 }
 .home {
 	display: flex;
@@ -10,9 +12,15 @@
 	position: relative;
 }
 
-.buscador{
-	width: 100%;
+.contenedor-busqueda {
 	display: flex;
-	flex-wrap: wrap;
-  justify-content: center;
+	justify-content: flex-start;
+	align-items: flex-end;
 }
+.buscador {
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}

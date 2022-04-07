@@ -77,7 +77,6 @@ const Detalle = () => {
 								precision={0.5}
 								readOnly
 							/>
-							{/* VER PORQUE NO FUNCIONA CON MALE*/}
 						</Stack>
 						<Typography variant="body1" gutterBottom>
 							Duración : {pelicula.runtime} minutos.
@@ -102,7 +101,7 @@ const Detalle = () => {
 								Género:
 							</Typography>
 							{pelicula?.genres?.map((elemento) => (
-								<Typography variant="body1" gutterBottom>
+								<Typography variant="body1" gutterBottom key={elemento.id}>
 									{elemento.name}
 								</Typography>
 							))}

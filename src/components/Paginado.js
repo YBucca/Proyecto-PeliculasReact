@@ -11,6 +11,7 @@ const Paginado = ({ handleChange, page, totalPages }) => {
 				color="secondary"
 				page={page}
 				onChange={handleChange}
+				size={window.innerWidth > 576 ? "large" : "small"}
 			/>
 		</Box>
 	);

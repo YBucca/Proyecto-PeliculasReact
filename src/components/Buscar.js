@@ -1,35 +1,38 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Cards from "./Cards";
 import Paginado from "./Paginado";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import { FormControl, InputLabel, Input, Button } from "@mui/material";
-import useFetchApp from "../hooks/useFetchApp";
 import { useContext } from "react";
 import Context from "../context/Context";
+import imagen from "../assets/imagen-not-found.webp";
 const Buscar = () => {
 	const context = useContext(Context);
+	const navigate = useNavigate();
 	const [page, setPage] = useState(1);
 	const [valorDelInput, setValorDelInput] = useState("");
 	const [peliculas, setPeliculas] = useState([]);
 	const [searchParams, setSearchParams] = useSearchParams({ query: "" });
-	const { datos, cargando, totalPages } = useFetchApp("", "", "", page);
-/// ver useFetchApp error en consola 
+	const [totalPaginas, setTotalPaginas] = useState(1);
 	useEffect(() => {
-		fetch(
-			`https://api.themoviedb.org/3/search/movie?api_key=457fa7dd417d06a0e15d7fe61f662df1&query=${searchParams.get(
-				"query"
-			)}&page=${page}`
-		)
-			.then((res) => res.json())
-			.then((data) => {
-				if (data.results) {
-					setPeliculas(data.results);
-				} else {
-				}
-				// para que al buscar algo que no sea de la api , no se actualice y se borre todo. hacer una imagen de error
-			});
+		if (searchParams.get("query")) {
+			fetch(
+				`https://api.themoviedb.org/3/search/movie?api_key=457fa7dd417d06a0e15d7fe61f662df1&query=${searchParams.get(
+					"query"
+				)}&page=${page}`
+			)
+				.then((res) => res.json())
+				.then((data) => {
+					if (data.results?.length) {
+						setPeliculas(data.results);
+						setTotalPaginas(data.total_pages);
+					} else {
+						navigate("/Error");
+					}
+				});
+		}
 	}, [searchParams, page]);
 	const handleChange = (event, value) => {
 		setPage(value);
@@ -53,7 +56,7 @@ const Buscar = () => {
 			>
 				<Grid item md={12}>
 					<FormControl sx={{ width: "50%" }}>
-						<InputLabel htmlFor="my-input">
+						<InputLabel htmlFor="input-busqueda">
 							Ingresá una película
 						</InputLabel>
 						<Input
@@ -74,26 +77,32 @@ const Buscar = () => {
 					</Button>
 				</Grid>
 			</Grid>
-			<div className="buscador">
-				{peliculas.map((pelicula) => (
-					<Link
-						style={{
-							textDecoration: "none",
-							color: "#9f86c0",
-						}}
-						to={`/movie/${pelicula.id}`}
-						key={pelicula.id}
-					>
-						<Cards
-							titulo={pelicula.title}
-							imagen={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`}
-						/>
-					</Link>
-				))}
+			<div className="contenedor-busqueda">
+				<div className="buscador">
+					{peliculas.map((pelicula) => (
+						<Link
+							style={{
+								textDecoration: "none",
+								color: "#9f86c0",
+							}}
+							to={`/movie/${pelicula.id}`}
+							key={pelicula.id}
+						>
+							<Cards
+								titulo={pelicula.title}
+								imagen={
+									pelicula.poster_path
+										? `https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`
+										: imagen
+								}
+							/>
+						</Link>
+					))}
+				</div>
 				<Paginado
 					handleChange={handleChange}
 					page={page}
-					totalPages={totalPages > 500 ? 500 : totalPages}
+					totalPages={totalPaginas > 500 ? 500 : totalPaginas}
 				/>
 			</div>
 		</>
