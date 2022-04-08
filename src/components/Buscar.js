@@ -46,7 +46,7 @@ const Buscar = () => {
 		});
 	};
 	return (
-		<>
+		<div className="seccion-busqueda">
 			<Grid
 				container
 				sx={{
@@ -77,7 +77,7 @@ const Buscar = () => {
 					</Button>
 				</Grid>
 			</Grid>
-			<div className="contenedor-busqueda">
+	
 				<div className="buscador">
 					{peliculas.map((pelicula) => (
 						<Link
@@ -104,8 +104,7 @@ const Buscar = () => {
 					page={page}
 					totalPages={totalPaginas > 500 ? 500 : totalPaginas}
 				/>
-			</div>
-		</>
+		</div>
 	);
 };
 

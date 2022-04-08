@@ -13,7 +13,8 @@ const Cards = ({ titulo, imagen }) => {
 				height: 530,
 				bgcolor: context.modoClaro ? "#9f86c0" : "transparent",
 				position: "relative",
-				m: 1,
+				m: 2,
+				'&:hover':{transform:"scale(1.15)", transitionDuration:"0.3s", zIndex:7}
 			}}
 		>
 			<CardContent sx={{ textAlign: "center" }}>

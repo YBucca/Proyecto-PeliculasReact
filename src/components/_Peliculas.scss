@@ -5,22 +5,25 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin-top: 30px;
 }
 .home {
 	display: flex;
 	flex-direction: column;
 	position: relative;
 }
-
-.contenedor-busqueda {
+.seccion-busqueda {
 	display: flex;
-	justify-content: flex-start;
-	align-items: flex-end;
-}
-.buscador {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	.buscador {
 		width: 100%;
 		min-height: 100vh;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		align-items: center;
+		margin-top: 30px;
 	}
+}
