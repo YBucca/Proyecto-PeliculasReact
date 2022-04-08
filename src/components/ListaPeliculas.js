@@ -6,7 +6,7 @@ const ListaPeliculas = ({  info }) => {
 		<>
 			<Box
 				sx={{
-					width:"800px",
+					width:"900px",
 					height:"500px",
 					border: "1px solid grey",
 					p: 10,

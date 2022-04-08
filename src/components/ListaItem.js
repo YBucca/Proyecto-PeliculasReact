@@ -8,9 +8,17 @@ import Stack from "@mui/material/Stack";
 import { Link } from "react-router-dom";
 const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 	return (
-		<Box sx={{ display: "flex", p: 1, alignItems: "center", justifyContent:"space-between"}}>
+		<Box
+			sx={{
+				width: "100%",
+				display: "flex",
+				p: 1,
+				alignItems: "center",
+				justifyContent: "space-between",
+			}}
+		>
 			<Avatar alt={titulo} src={imagen} />
-			<Typography variant="h5">
+			<Typography variant="h5" sx={{ ml: 2 }}>
 				{titulo}
 			</Typography>
 			<Stack spacing={1}>
