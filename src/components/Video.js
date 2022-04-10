@@ -14,9 +14,12 @@ const Video = ({ handleClickCerrarVideo }) => {
 	}, []);
 	return (
 		<div className="video">
-			<button className="btn-cerrar" onClick={handleClickCerrarVideo}><CloseIcon/></button>
+			<button className="btn-cerrar" onClick={handleClickCerrarVideo}>
+				<CloseIcon />
+			</button>
 			{pelicula.map((video) => (
 				<iframe
+					key={video.id}
 					aria-label={`${video.name}`}
 					title={video.name}
 					gyroscope="true"
