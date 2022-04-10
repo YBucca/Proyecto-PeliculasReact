@@ -8,9 +8,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
+import CardActions from "@mui/material/CardActions";
+import IconButton from "@mui/material/IconButton";
+import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
+import Video from "./Video";
 const Detalle = () => {
 	const params = useParams();
 	const [pelicula, setPelicula] = useState([]);
+	const [verVideo, setVerVideo] = useState(false);
 	useEffect(() => {
 		fetch(
 			`https://api.themoviedb.org/3/movie/${params.idPelicula}?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=es`
@@ -18,9 +23,19 @@ const Detalle = () => {
 			.then((res) => res.json())
 			.then((data) => setPelicula(data));
 	}, []);
-	console.log("detalle", pelicula);
+
+	const handleClickVerVideo = () => {
+		setVerVideo(true);
+	};
+	const handleClickCerrarVideo = () => {
+		setVerVideo(false);
+	};
+
 	return (
 		<div className="detalle" key={pelicula.id}>
+			{verVideo && (
+				<Video handleClickCerrarVideo={handleClickCerrarVideo} />
+			)}
 			<Box
 				sx={{
 					height: "100%",
@@ -101,11 +116,38 @@ const Detalle = () => {
 								Género:
 							</Typography>
 							{pelicula?.genres?.map((elemento) => (
-								<Typography variant="body1" gutterBottom key={elemento.id}>
+								<Typography
+									variant="body1"
+									gutterBottom
+									key={elemento.id}
+								>
 									{elemento.name}
 								</Typography>
 							))}
 						</Stack>
+						<CardActions>
+							<IconButton
+								aria-label="ver trailer"
+								onClick={handleClickVerVideo}
+								sx={{
+									color: "white",
+									"&:hover": {
+										color: "violet",
+									},
+								}}
+							>
+								<PlayCircleFilledWhiteIcon
+									sx={{
+										fontSize: 45,
+										color: "white",
+										"&:hover": {
+											color: "violet",
+										},
+									}}
+								/>
+								Tráiler
+							</IconButton>
+						</CardActions>
 					</CardContent>
 				</CardContent>
 			</Card>
