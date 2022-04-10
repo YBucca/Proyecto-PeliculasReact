@@ -49,3 +49,10 @@
 		height: 80%;
 	}
 }
+
+.section-flex{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

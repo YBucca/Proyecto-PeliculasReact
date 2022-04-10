@@ -19,7 +19,7 @@ const Populares = () => {
 	};
 
 	return (
-		<>
+		<div className="section-flex">
 			<Loader cargando={cargando} />
 			{!cargando && (
 				<div className="container">
@@ -38,15 +38,14 @@ const Populares = () => {
 							/>
 						</Link>
 					))}
-
-					<Paginado
-						handleChange={handleChange}
-						page={page}
-						totalPages={totalPages > 500 ? 500 : totalPages}
-					/>
 				</div>
 			)}
-		</>
+			<Paginado
+				handleChange={handleChange}
+				page={page}
+				totalPages={totalPages > 500 ? 500 : totalPages}
+			/>
+		</div>
 	);
 };
 export default Populares;
