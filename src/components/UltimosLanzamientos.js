@@ -17,7 +17,7 @@ const UltimosLanzamientos = () => {
 				setPage(value);
 			};
 	return (
-		<>
+		<div className="section-flex">
 			<Loader cargando={cargando} />
 			{!cargando && (
 				<div className="container">
@@ -36,14 +36,14 @@ const UltimosLanzamientos = () => {
 							/>
 						</Link>
 					))}
-					<Paginado
-						handleChange={handleChange}
-						page={page}
-						totalPages={totalPages > 500 ? 500 : totalPages}
-					/>
 				</div>
 			)}
-		</>
+			<Paginado
+				handleChange={handleChange}
+				page={page}
+				totalPages={totalPages > 500 ? 500 : totalPages}
+			/>
+		</div>
 	);
 };
 export default UltimosLanzamientos;

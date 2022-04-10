@@ -56,6 +56,7 @@ const NavBar = () => {
 								style={{
 									textDecoration: "none",
 									color: "#9f86c0",
+									width: "170px",
 								}}
 								to="/ultimos-lanzamientos"
 							>
@@ -85,18 +86,19 @@ const NavBar = () => {
 							</Link>
 						</ListItem>
 					</List>
-					<IconButton
-						color="secondary"
-						aria-label="cambio de tema oscuro a claro"
-						onClick={handleClick}
-					>
-						{context.modoClaro ? (
-							<NightlightIcon />
-						) : (
-							<LightModeIcon />
-						)}
-					</IconButton>
-					
+					<Box sx={{position:"relative", left:650}}>
+						<IconButton
+							color="secondary"
+							aria-label="cambio de tema oscuro a claro"
+							onClick={handleClick}
+						>
+							{context.modoClaro ? (
+								<NightlightIcon />
+							) : (
+								<LightModeIcon />
+							)}
+						</IconButton>
+					</Box>
 				</Toolbar>
 			</AppBar>
 		</Box>
