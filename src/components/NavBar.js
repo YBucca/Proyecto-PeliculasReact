@@ -11,6 +11,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import IconButton from "@mui/material/IconButton";
 import Selectlang from "./Selectlang";
+import { cambioLenguaje } from "../utils/variables";
 
 const NavBar = () => {
 	const context = useContext(Context);
@@ -27,7 +28,8 @@ const NavBar = () => {
 			<AppBar
 				sx={{
 					bgcolor: "#231942",
-					p:2
+					p: 2,
+					fontSize:20
 				}}
 				position="static"
 			>
@@ -47,6 +49,7 @@ const NavBar = () => {
 								style={{
 									textDecoration: "none",
 									color: "#9f86c0",
+									width: "100px",
 								}}
 								to="/"
 							>
@@ -58,11 +61,14 @@ const NavBar = () => {
 								style={{
 									textDecoration: "none",
 									color: "#9f86c0",
-									width: "170px",
+									width: "200px",
 								}}
 								to="/ultimos-lanzamientos"
 							>
-								Últimos Lanzamientos
+								{
+									cambioLenguaje[context.lenguaje]
+										.navLanzamientos
+								}
 							</Link>
 						</ListItem>
 						<ListItem button>
@@ -70,10 +76,11 @@ const NavBar = () => {
 								style={{
 									textDecoration: "none",
 									color: "#9f86c0",
+									width: "100px",
 								}}
 								to="/populares"
 							>
-								Populares
+								{cambioLenguaje[context.lenguaje].navPopulares}
 							</Link>
 						</ListItem>
 						<ListItem button>
@@ -81,14 +88,21 @@ const NavBar = () => {
 								style={{
 									textDecoration: "none",
 									color: "#9f86c0",
+									width: "100px",
 								}}
 								to="/busqueda"
 							>
-								Buscar
+								{cambioLenguaje[context.lenguaje].navBuscar}
 							</Link>
 						</ListItem>
 					</List>
-					<Box sx={{ position: "relative", left: 650 , display:"flex"}}>
+					<Box
+						sx={{
+							position: "relative",
+							left: 650,
+							display: "flex",
+						}}
+					>
 						<IconButton
 							color="secondary"
 							aria-label="cambio de tema oscuro a claro"

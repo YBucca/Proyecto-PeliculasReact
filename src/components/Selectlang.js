@@ -1,15 +1,14 @@
-import { useState } from "react";
+import { useContext } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import LanguageIcon from "@mui/icons-material/Language";
-
+import Context from "../context/Context";
 const Selectlang = () => {
-	const [lenguaje, setLenguaje] = useState("");
-
+	const contexto = useContext(Context);
 	const handleChange = (e) => {
-		setLenguaje(e.target.value);
+	 contexto.setLenguaje(e.target.value);
 	};
 	return (
 		<div>
@@ -20,15 +19,16 @@ const Selectlang = () => {
 				<Select
 					labelId="demo-simple-select-autowidth-label"
 					id="demo-simple-select-autowidth"
-					value={lenguaje}
+					value={contexto.lenguaje}
 					onChange={handleChange}
 					autoWidth
 					label="lenguaje"
-					sx={{color:"white"}}
+					sx={{ color: "white" }}
 				>
 					<MenuItem value="es">Español</MenuItem>
-					<MenuItem value="in">Inglés</MenuItem>
-					<MenuItem value="port">Português</MenuItem>
+					<MenuItem value="en">Inglés</MenuItem>
+					<MenuItem value="pt">Português</MenuItem>
+					<MenuItem value="it">Italiano</MenuItem>
 				</Select>
 			</FormControl>
 		</div>

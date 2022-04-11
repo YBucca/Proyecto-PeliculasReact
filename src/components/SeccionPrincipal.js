@@ -8,6 +8,9 @@ import { useContext } from "react";
 import Context from "../context/Context";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import {
+	cambioLenguaje
+} from "../utils/variables";
 
 const SeccionPrincipal = () => {
 	const { datos: peliculas, cargando } = useFetchApp("","movie", "popular", 1);
@@ -33,16 +36,26 @@ const SeccionPrincipal = () => {
 						cargando={cargandoGeneral}
 					/>
 					<Carrusel
-						mensaje="Películas populares"
+						mensaje={cambioLenguaje[context.lenguaje].populares}
 						info={peliculas}
 						cargando={cargandoGeneral}
 					/>
-					<Container maxWidth="xl" sx={{ bgcolor: context.modoClaro ? "modo-claro": "modo-oscuro", mb: 5 , display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center",p:5}}>
-						<Typography
-							variant="h3"
-							gutterBottom
-						>
-							Películas mejor puntuadas
+					<Container
+						maxWidth="xl"
+						sx={{
+							bgcolor: context.modoClaro
+								? "modo-claro"
+								: "modo-oscuro",
+							mb: 5,
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							p: 5,
+						}}
+					>
+						<Typography variant="h3" gutterBottom>
+							{cambioLenguaje[context.lenguaje].mejorPuntuadas}
 						</Typography>
 						<ListaPeliculas
 							titulo="Películas mejor puntuadas"
@@ -50,8 +63,6 @@ const SeccionPrincipal = () => {
 							cargando={cargandoGeneral}
 						/>
 					</Container>
-
-					
 				</>
 			)}
 		</div>

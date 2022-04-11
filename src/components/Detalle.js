@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import Context from "../context/Context";
 import { useParams } from "react-router-dom";
 import "../App.scss";
 import Card from "@mui/material/Card";
@@ -12,17 +13,19 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
 import Video from "./Video";
+import { cambioLenguaje } from "../utils/variables";
 const Detalle = () => {
 	const params = useParams();
+	const contexto = useContext(Context);
 	const [pelicula, setPelicula] = useState([]);
 	const [verVideo, setVerVideo] = useState(false);
 	useEffect(() => {
 		fetch(
-			`https://api.themoviedb.org/3/movie/${params.idPelicula}?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=es`
+			`https://api.themoviedb.org/3/movie/${params.idPelicula}?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=${contexto.lenguaje}`
 		)
 			.then((res) => res.json())
 			.then((data) => setPelicula(data));
-	}, []);
+	}, [contexto.lenguaje]);
 
 	const handleClickVerVideo = () => {
 		setVerVideo(true);
@@ -94,7 +97,9 @@ const Detalle = () => {
 							/>
 						</Stack>
 						<Typography variant="body1" gutterBottom>
-							Duración : {pelicula.runtime} minutos.
+							{cambioLenguaje[contexto.lenguaje].duracion} :
+							{pelicula.runtime}
+							{cambioLenguaje[contexto.lenguaje].minutos}.
 						</Typography>
 						<Typography variant="body1" gutterBottom>
 							{pelicula.overview}
@@ -113,7 +118,7 @@ const Detalle = () => {
 						</Typography>
 						<Stack spacing={1} direction="row">
 							<Typography variant="body1" gutterBottom>
-								Género:
+								{cambioLenguaje[contexto.lenguaje].genero}:
 							</Typography>
 							{pelicula?.genres?.map((elemento) => (
 								<Typography

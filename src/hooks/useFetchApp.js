@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import Context from "../context/Context";
 import {
 	urlBase,
 	apiKey,
@@ -10,6 +11,7 @@ const useFetchApp = (tendencia, tipo, categoria, page) => {
 	const [datos, setDatos] = useState([]);
 	const [totalPages, setTotalPages] = useState(1);
 	const [cargando, setCargando] = useState(false);
+	const contexto = useContext(Context);
 	useEffect(() => {
 		setCargando(true);
 		fetch(
@@ -17,7 +19,9 @@ const useFetchApp = (tendencia, tipo, categoria, page) => {
 				tendencia,
 				tipo,
 				categoria
-			)}?${apiKey}${queryLenguaje}=es${queryPage}=${page}`
+			)}?${apiKey}${queryLenguaje}=${
+				contexto.lenguaje
+			}${queryPage}=${page}`
 		)
 			.then((res) => res.json())
 			.then((data) => {
@@ -25,7 +29,7 @@ const useFetchApp = (tendencia, tipo, categoria, page) => {
 				setTotalPages(data.total_pages);
 				setCargando(false);
 			});
-	}, [page]);
+	}, [contexto.lenguaje, page]);
 	return {
 		datos: datos,
 		cargando: cargando,
