@@ -22,6 +22,7 @@ export const cambioLenguaje = {
 		duracion: "Duración",
 		minutos: "minutos",
 		genero: "Géneros",
+		ingresa: "Ingresá una película",
 	},
 	en: {
 		populares: "Popular movies",
@@ -33,6 +34,7 @@ export const cambioLenguaje = {
 		duracion: "Duration",
 		minutos: "minutes",
 		genero: "Genders",
+		ingresa: "Enter a movie",
 	},
 	pt: {
 		populares: "Filmes populares",
@@ -44,6 +46,7 @@ export const cambioLenguaje = {
 		duracion: "Duração",
 		minutos: "minutos",
 		genero: "Gêneros",
+		ingresa: "Digite um filme",
 	},
 	it: {
 		populares: "Film popolari",
@@ -55,5 +58,6 @@ export const cambioLenguaje = {
 		duracion: "Durata",
 		minutos: "minuti",
 		genero: "Generi",
+		ingresa: "Entrare in un film",
 	},
 };

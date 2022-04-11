@@ -8,6 +8,7 @@ import { FormControl, InputLabel, Input, Button } from "@mui/material";
 import { useContext } from "react";
 import Context from "../context/Context";
 import imagen from "../assets/imagen-not-found.webp";
+import { cambioLenguaje } from "../utils/variables";
 const Buscar = () => {
 	const context = useContext(Context);
 	const navigate = useNavigate();
@@ -57,7 +58,7 @@ const Buscar = () => {
 				<Grid item md={12}>
 					<FormControl sx={{ width: "50%" }}>
 						<InputLabel htmlFor="input-busqueda">
-							Ingresá una película
+							{cambioLenguaje[context.lenguaje].ingresa}
 						</InputLabel>
 						<Input
 							id="buscador"
@@ -73,37 +74,37 @@ const Buscar = () => {
 						size="small"
 						sx={{ m: 2 }}
 					>
-						Buscar
+						{cambioLenguaje[context.lenguaje].navBuscar}
 					</Button>
 				</Grid>
 			</Grid>
-	
-				<div className="buscador">
-					{peliculas.map((pelicula) => (
-						<Link
-							style={{
-								textDecoration: "none",
-								color: "#9f86c0",
-							}}
-							to={`/movie/${pelicula.id}`}
-							key={pelicula.id}
-						>
-							<Cards
-								titulo={pelicula.title}
-								imagen={
-									pelicula.poster_path
-										? `https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`
-										: imagen
-								}
-							/>
-						</Link>
-					))}
-				</div>
-				<Paginado
-					handleChange={handleChange}
-					page={page}
-					totalPages={totalPaginas > 500 ? 500 : totalPaginas}
-				/>
+
+			<div className="buscador">
+				{peliculas.map((pelicula) => (
+					<Link
+						style={{
+							textDecoration: "none",
+							color: "#9f86c0",
+						}}
+						to={`/movie/${pelicula.id}`}
+						key={pelicula.id}
+					>
+						<Cards
+							titulo={pelicula.title}
+							imagen={
+								pelicula.poster_path
+									? `https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`
+									: imagen
+							}
+						/>
+					</Link>
+				))}
+			</div>
+			<Paginado
+				handleChange={handleChange}
+				page={page}
+				totalPages={totalPaginas > 500 ? 500 : totalPaginas}
+			/>
 		</div>
 	);
 };
