@@ -5,11 +5,12 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
-import { useContext } from "react";
+import { useContext} from "react";
 import Context from "../context/Context";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import IconButton from "@mui/material/IconButton";
+import Selectlang from "./Selectlang";
 
 const NavBar = () => {
 	const context = useContext(Context);
@@ -26,6 +27,7 @@ const NavBar = () => {
 			<AppBar
 				sx={{
 					bgcolor: "#231942",
+					p:2
 				}}
 				position="static"
 			>
@@ -86,7 +88,7 @@ const NavBar = () => {
 							</Link>
 						</ListItem>
 					</List>
-					<Box sx={{position:"relative", left:650}}>
+					<Box sx={{ position: "relative", left: 650 , display:"flex"}}>
 						<IconButton
 							color="secondary"
 							aria-label="cambio de tema oscuro a claro"
@@ -98,6 +100,7 @@ const NavBar = () => {
 								<LightModeIcon />
 							)}
 						</IconButton>
+						<Selectlang />
 					</Box>
 				</Toolbar>
 			</AppBar>

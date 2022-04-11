@@ -13,6 +13,7 @@ import { useState } from "react";
 
 const App = () => {
 	const [modoClaro, setModoClaro] = useState(false);
+
 	const context = {
 		modoClaro: modoClaro,
 		setModoClaro: setModoClaro,
