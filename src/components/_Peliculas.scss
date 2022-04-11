@@ -38,6 +38,7 @@
 	align-items: center;
 	z-index: 99999;
 	position: absolute;
+	overflow-y: scroll;
 	.btn-cerrar {
 		position: relative;
 		border: transparent;
@@ -46,8 +47,9 @@
 		bottom: 400px;
 	}
 	iframe {
-		width: 90%;
+		width: 80%;
 		height: 80%;
+		margin: 15px 0 15px 0;
 	}
 }
 
