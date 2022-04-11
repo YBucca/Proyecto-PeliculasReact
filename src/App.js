@@ -13,9 +13,13 @@ import { useState } from "react";
 
 const App = () => {
 	const [modoClaro, setModoClaro] = useState(false);
+	const [lenguaje, setLenguaje] = useState("es")
+
 	const context = {
 		modoClaro: modoClaro,
 		setModoClaro: setModoClaro,
+		lenguaje: lenguaje,
+		setLenguaje: setLenguaje,
 	};
 	return (
 		<BrowserRouter>

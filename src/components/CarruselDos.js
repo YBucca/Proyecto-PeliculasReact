@@ -9,6 +9,9 @@ import Button from "@mui/material/Button";
 import CardActions from "@mui/material/CardActions";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
+import { cambioLenguaje } from "../utils/variables";
+import { useContext } from "react";
+import Context from "../context/Context";
 
 const CarruselDos = ({ info }) => {
 	const settings = {
@@ -19,6 +22,7 @@ const CarruselDos = ({ info }) => {
 		slidesToScroll: 1,
 		autoplay: true,
 	};
+	const contexto = useContext(Context)
 	return (
 		<Container maxWidth="xl" sx={{ bgcolor: "transparent", mb: 2 }}>
 			<Slider {...settings}>
@@ -34,7 +38,7 @@ const CarruselDos = ({ info }) => {
 								backgroundImage: `url("https://image.tmdb.org/t/p/original/${elemento.backdrop_path}")`,
 								backgroundRepeat: "no-repeat",
 								backgroundSize: "cover",
-								backgroundPosition:"center",
+								backgroundPosition: "center",
 							}}
 						>
 							<CardContent
@@ -77,7 +81,10 @@ const CarruselDos = ({ info }) => {
 										to={`/movie/${elemento.id}`}
 									>
 										<Button variant="contained">
-											VER MAS...
+											{
+												cambioLenguaje[contexto.lenguaje]
+													.btnVerMas
+											}...
 										</Button>
 									</Link>
 								</CardActions>

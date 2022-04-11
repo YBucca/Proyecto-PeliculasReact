@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import Context from "../context/Context";
 import { useParams } from "react-router-dom";
 import "../App.scss";
 import CloseIcon from "@mui/icons-material/Close";
 const Video = ({ handleClickCerrarVideo }) => {
 	const params = useParams();
 	const [pelicula, setPelicula] = useState([]);
+	const contexto = useContext(Context);
 	useEffect(() => {
 		fetch(
-			`https://api.themoviedb.org/3/movie/${params.idPelicula}/videos?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=es`
+			`https://api.themoviedb.org/3/movie/${params.idPelicula}/videos?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=${contexto.lenguaje}`
 		)
 			.then((res) => res.json())
 			.then((data) => setPelicula(data.results));
-	}, []);
+	}, [contexto.lenguaje]);
 	return (
 		<div className="video">
 			<button className="btn-cerrar" onClick={handleClickCerrarVideo}>
