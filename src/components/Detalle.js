@@ -86,14 +86,15 @@ const Detalle = () => {
 						<Stack spacing={1}>
 							<Rating
 								name="half-rating-read"
-								defaultValue={pelicula.vote_average}
+								defaultValue={pelicula.vote_average / 2}
 								precision={0.5}
 								readOnly
+								sx={{ mb: 2 }}
 							/>
 						</Stack>
 						<Typography variant="body1" gutterBottom>
-							{cambioLenguaje[contexto.lenguaje].duracion} :
-							{pelicula.runtime}
+							{cambioLenguaje[contexto.lenguaje].duracion}:
+							<span> {pelicula.runtime} </span>
 							{cambioLenguaje[contexto.lenguaje].minutos}.
 						</Typography>
 						<Typography variant="body1" gutterBottom>
