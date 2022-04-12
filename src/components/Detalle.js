@@ -63,6 +63,7 @@ const Detalle = () => {
 				}}
 			>
 				<CardContent
+					className="detalle-container"
 					sx={{
 						display: "flex",
 						height: "500px",
@@ -76,15 +77,9 @@ const Detalle = () => {
 						component="img"
 						image={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
 						alt={pelicula.title}
-						sx={{ width: "400px", height: "600px" }}
+						className="detalle-img"
 					/>
-					<CardContent
-						sx={{
-							display: "flex",
-							flexDirection: "column",
-							width: "600px",
-						}}
-					>
+					<CardContent className="detalle-info">
 						<Typography variant="h4" gutterBottom>
 							{pelicula.title}
 						</Typography>

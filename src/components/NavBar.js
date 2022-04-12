@@ -98,8 +98,6 @@ const NavBar = () => {
 					</List>
 					<Box
 						sx={{
-							position: "relative",
-							left: 650,
 							display: "flex",
 						}}
 					>
