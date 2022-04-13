@@ -15,10 +15,13 @@ const Video = ({ handleClickCerrarVideo }) => {
 			.then((data) => setPelicula(data.results));
 	}, [contexto.lenguaje]);
 	return (
-		<div className="video">
-			<button className="btn-cerrar" onClick={handleClickCerrarVideo}>
-				<CloseIcon />
-			</button>
+		<div className="seccion-video">
+			<div className="container-btn">
+				<button className="btn-cerrar" onClick={handleClickCerrarVideo}>
+					<CloseIcon />
+				</button>
+			</div>
+		<div className="container-video">
 			{pelicula.map((video) => (
 				<iframe
 					key={video.id}
@@ -31,6 +34,7 @@ const Video = ({ handleClickCerrarVideo }) => {
 					allowFullScreen
 				/>
 			))}
+			</div>
 		</div>
 	);
 };

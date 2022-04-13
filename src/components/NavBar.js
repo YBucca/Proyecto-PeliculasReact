@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
-import { useContext} from "react";
+import { useContext } from "react";
 import Context from "../context/Context";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import NightlightIcon from "@mui/icons-material/Nightlight";
@@ -29,7 +29,7 @@ const NavBar = () => {
 				sx={{
 					bgcolor: "#231942",
 					p: 2,
-					fontSize:20
+					fontSize: 20,
 				}}
 				position="static"
 			>
@@ -101,6 +101,7 @@ const NavBar = () => {
 							display: "flex",
 						}}
 					>
+						<Selectlang />
 						<IconButton
 							color="secondary"
 							aria-label="cambio de tema oscuro a claro"
@@ -112,7 +113,6 @@ const NavBar = () => {
 								<LightModeIcon />
 							)}
 						</IconButton>
-						<Selectlang />
 					</Box>
 				</Toolbar>
 			</AppBar>
