@@ -66,8 +66,6 @@ const Detalle = () => {
 					className="detalle-container"
 					sx={{
 						display: "flex",
-						height: "500px",
-						width: "1000px",
 						position: "relative",
 						zIndex: 5,
 						color: "white",
