@@ -21,8 +21,7 @@ const NavBar = () => {
 	return (
 		<Box
 			sx={{
-				flexGrow: 1,
-				mb: 2,
+				mb: 1,
 			}}
 		>
 			<AppBar
@@ -34,13 +33,12 @@ const NavBar = () => {
 				position="static"
 			>
 				<Toolbar>
-					<LocalMoviesIcon sx={{ fontSize: 50 }} />
+					<LocalMoviesIcon sx={{ fontSize: 70 }} />
 					<List
 						component="nav"
 						sx={{
 							display: "flex",
 							flexDirection: "row",
-							justifyContent: "flex-end",
 							alignItems: "center",
 						}}
 					>
@@ -49,7 +47,6 @@ const NavBar = () => {
 								style={{
 									textDecoration: "none",
 									color: "#9f86c0",
-									width: "100px",
 								}}
 								to="/"
 							>
@@ -99,6 +96,8 @@ const NavBar = () => {
 					<Box
 						sx={{
 							display: "flex",
+							width:"80%",
+							justifyContent:"flex-end"
 						}}
 					>
 						<Selectlang />
