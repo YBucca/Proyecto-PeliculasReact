@@ -14,7 +14,7 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 				display: "flex",
 				p: 1,
 				alignItems: "center",
-				justifyContent: "space-between",
+				justifyContent:"space-between",
 			}}
 		>
 			<Avatar alt={titulo} src={imagen} />

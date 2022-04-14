@@ -63,10 +63,9 @@ const Detalle = () => {
 				}}
 			>
 				<CardContent
+					className="detalle-container"
 					sx={{
 						display: "flex",
-						height: "500px",
-						width: "1000px",
 						position: "relative",
 						zIndex: 5,
 						color: "white",
@@ -76,29 +75,24 @@ const Detalle = () => {
 						component="img"
 						image={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
 						alt={pelicula.title}
-						sx={{ width: "400px", height: "600px" }}
+						className="detalle-img"
 					/>
-					<CardContent
-						sx={{
-							display: "flex",
-							flexDirection: "column",
-							width: "600px",
-						}}
-					>
+					<CardContent className="detalle-info">
 						<Typography variant="h4" gutterBottom>
 							{pelicula.title}
 						</Typography>
 						<Stack spacing={1}>
 							<Rating
 								name="half-rating-read"
-								defaultValue={pelicula.vote_average}
+								defaultValue={pelicula.vote_average / 2}
 								precision={0.5}
 								readOnly
+								sx={{ mb: 2 }}
 							/>
 						</Stack>
 						<Typography variant="body1" gutterBottom>
-							{cambioLenguaje[contexto.lenguaje].duracion} :
-							{pelicula.runtime}
+							{cambioLenguaje[contexto.lenguaje].duracion}:
+							<span> {pelicula.runtime} </span>
 							{cambioLenguaje[contexto.lenguaje].minutos}.
 						</Typography>
 						<Typography variant="body1" gutterBottom>

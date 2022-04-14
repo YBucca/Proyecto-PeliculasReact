@@ -1,17 +1,18 @@
 import Box from "@mui/material/Box";
 import ListaItem from "./ListaItem";
 
-const ListaPeliculas = ({  info }) => {
+const ListaPeliculas = ({ info }) => {
 	return (
 		<>
 			<Box
+				className="lista-peliculas"
 				sx={{
-					width:"900px",
-					height:"500px",
+					width: "90%",
+					height: "500px",
 					border: "1px solid grey",
 					p: 10,
 					backgroundColor: "#9f86c0",
-					overflowY:"scroll"
+					overflowY: "scroll",
 				}}
 			>
 				{info.map((elemento) => (

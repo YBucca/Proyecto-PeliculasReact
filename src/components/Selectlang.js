@@ -12,7 +12,7 @@ const Selectlang = () => {
 	};
 	return (
 		<div>
-			<FormControl sx={{ ml: 3, minWidth: 70 }}>
+			<FormControl sx={{ ml: 3, minWidth: 70, mr:4}}>
 				<InputLabel id="demo-simple-select-autowidth-label">
 					<LanguageIcon color="secondary" />
 				</InputLabel>

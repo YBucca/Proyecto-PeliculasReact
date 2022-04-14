@@ -4,9 +4,12 @@ import useFetchApp from "../hooks/useFetchApp";
 import Cards from "./Cards";
 import Loader from "./Loader";
 import Paginado from "./Paginado";
-import { useState } from "react";
-
+import { useState, useContext } from "react";
+import { cambioLenguaje } from "../utils/variables";
+import Context from "../context/Context";
+import Typography from "@mui/material/Typography";
 const Populares = () => {
+	const contexto = useContext(Context);
 	const [page, setPage] = useState(1);
 	const {
 		datos: peliculas,
@@ -20,6 +23,9 @@ const Populares = () => {
 
 	return (
 		<div className="section-flex">
+			<Typography variant="h3" gutterBottom>
+				{cambioLenguaje[contexto.lenguaje].navPopulares}
+			</Typography>
 			<Loader cargando={cargando} />
 			{!cargando && (
 				<div className="container">
