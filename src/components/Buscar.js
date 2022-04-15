@@ -55,7 +55,7 @@ const Buscar = () => {
 					bgcolor: context.modoClaro ? "transparent" : "#9f86c0",
 				}}
 			>
-				<Grid item md={12}>
+				<Grid item md={12} xs={12}>
 					<FormControl sx={{ width: "50%" }}>
 						<InputLabel htmlFor="input-busqueda">
 							{cambioLenguaje[context.lenguaje].ingresa}
