@@ -103,6 +103,12 @@
 		justify-content: center;
 		align-items: center;
 	}
+	.detalle-img {
+		display: none !important;
+	}
+	.detalle-info{
+		width: 100%;
+	}
 	.seccion-video {
 		.container-video {
 			iframe {
@@ -121,9 +127,10 @@
 		height: 20vh;
 		width: 300px;
 	}
+
 	.box-nav {
 		display: flex;
-		flex-direction: column !important;
+	
 		justify-content: flex-end;
 		margin-left: 50px;
 	}
