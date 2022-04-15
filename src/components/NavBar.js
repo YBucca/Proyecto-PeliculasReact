@@ -130,12 +130,11 @@ const NavBar = () => {
 								color="secondary"
 								aria-label="cambio de tema oscuro a claro"
 								onClick={handleClick}
-								sx={{ m: 2 }}
 							>
 								{context.modoClaro ? (
-									<NightlightIcon />
+									<NightlightIcon sx={{ fontSize: 30 }} />
 								) : (
-									<LightModeIcon />
+									<LightModeIcon sx={{ fontSize: 30 }} />
 								)}
 							</IconButton>
 							<Selectlang />

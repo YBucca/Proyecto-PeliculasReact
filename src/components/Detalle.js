@@ -40,6 +40,7 @@ const Detalle = () => {
 				<Video handleClickCerrarVideo={handleClickCerrarVideo} />
 			)}
 			<Box
+			
 				sx={{
 					height: "100%",
 					width: "100%",
@@ -124,7 +125,7 @@ const Detalle = () => {
 								</Typography>
 							))}
 						</Stack>
-						<CardActions>
+						<CardActions className="trailer">
 							<IconButton
 								aria-label="ver trailer"
 								onClick={handleClickVerVideo}
