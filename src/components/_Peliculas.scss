@@ -76,6 +76,10 @@
 .detalle-info {
 	width: 600px;
 }
+.btn-burger {
+	display: none !important;
+	//no funciona la clase
+}
 
 @media screen and(max-width:900px) {
 	.detalle-img {
@@ -107,5 +111,26 @@
 				margin: 20px 0 20px 0;
 			}
 		}
+	}
+	.nav-bar {
+		display: none;
+		flex-direction: column !important;
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 20vh;
+		width: 300px;
+	}
+	.box-nav {
+		display: flex;
+		flex-direction: column !important;
+		justify-content: flex-end;
+		margin-left: 50px;
+	}
+	.icono-principal {
+		display: none !important;
+	}
+	.btn-burger {
+		display: flex;
 	}
 }
