@@ -1,30 +1,51 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
 const Footer = () => {
 	return (
 		<Box
 			sx={{
 				bgcolor: "#231942",
 				color: "#9f86c0",
-				height: 40,
+				height: 70,
 				display: "flex",
 				justifyContent: "center",
 				alignItems: "center",
-				p: 2,
 				mt: 5,
 			}}
 		>
 			<Typography
 				sx={{
 					fontWeight: "bold",
-					fontSize: 20,
-					// fontFamily: "nunito",
+					textAlign: "center",
+					m: 1,
 				}}
 			>
-				<FavoriteIcon />
+				Yanina Bucca
 			</Typography>
+			<a
+				href="https://www.linkedin.com/in/yaninabucca/"
+				target="_blank"
+				aria-label="Ir a mi linkedin"
+			>
+				<LinkedInIcon sx={{ color: "#9f86c0", m: 1 }} />
+			</a>
+			<a
+				href="https://github.com/YBucca"
+				target="_blank"
+				aria-label="Ir a mi linkedin"
+			>
+				<GitHubIcon sx={{ color: "#9f86c0", m: 1 }} />
+			</a>
+			<a
+				href="mailto:yani.bucca@gmail.com"
+				target="_blank"
+				aria-label="Ir a mi linkedin"
+			>
+				<FavoriteIcon sx={{ color: "#9f86c0", m: 1 }} />
+			</a>
 		</Box>
 	);
 };
