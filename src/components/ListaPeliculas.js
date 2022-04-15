@@ -1,18 +1,20 @@
 import Box from "@mui/material/Box";
 import ListaItem from "./ListaItem";
+import Grid from "@mui/material/Grid";
 
 const ListaPeliculas = ({ info }) => {
 	return (
-		<>
-			<Box
-				className="lista-peliculas"
+		<Grid container>
+			<Grid
+				item
+				xs={12}
+				md={12}
 				sx={{
-					width: "90%",
 					height: "500px",
-					border: "1px solid grey",
-					p: 10,
 					backgroundColor: "#9f86c0",
 					overflowY: "scroll",
+					pl: 5,
+					pr: 5,
 				}}
 			>
 				{info.map((elemento) => (
@@ -24,8 +26,8 @@ const ListaPeliculas = ({ info }) => {
 						puntaje={elemento.vote_average}
 					/>
 				))}
-			</Box>
-		</>
+			</Grid>
+		</Grid>
 	);
 };
 

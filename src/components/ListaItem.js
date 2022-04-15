@@ -12,25 +12,35 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 			sx={{
 				width: "100%",
 				display: "flex",
-				p: 1,
+
 				alignItems: "center",
-				justifyContent:"space-between",
+				justifyContent: "space-between",
+				borderBottom: "1px solid grey",
 			}}
 		>
 			<Avatar alt={titulo} src={imagen} />
-			<Typography variant="h5" sx={{ ml: 2 }}>
+			<Typography
+				variant="h5"
+				sx={{ ml: 2 }}
+				className="tamaño-responsive"
+			>
 				{titulo}
 			</Typography>
 			<Stack spacing={1}>
 				<Rating
 					name="half-rating-read"
-					defaultValue={puntaje}
+					defaultValue={puntaje / 2}
 					precision={0.5}
 					readOnly
+					className="tamaño-responsive"
 				/>
 			</Stack>
-			<Typography variant="h6" sx={{ p: 2 }}>
-				{puntaje}
+			<Typography
+				variant="h6"
+				sx={{ p: 2 }}
+				className="tamaño-responsive"
+			>
+				{puntaje / 2}
 			</Typography>
 			<Link
 				to={`/movie/${link}`}
