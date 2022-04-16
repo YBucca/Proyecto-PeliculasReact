@@ -50,7 +50,8 @@ const SeccionPrincipal = () => {
 							flexDirection: "column",
 							justifyContent: "center",
 							alignItems: "center",
-							p:5
+							p: 5,
+							border: "1px solid #221942",
 						}}
 					>
 						<Typography variant="h3" gutterBottom>
