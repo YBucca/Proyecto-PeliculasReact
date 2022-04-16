@@ -17,14 +17,14 @@ import Hamburger from "hamburger-react";
 
 const NavBar = () => {
 	const [mostrarMenu, setMostrarMenu] = useState(false);
-	const handleClickMenu = () =>{
-		setMostrarMenu(!mostrarMenu) //ver ??
-	}
+	const handleClickMenu = () => {
+		setMostrarMenu(!mostrarMenu); //ver ??
+	};
 	const context = useContext(Context);
 	const handleClick = () => {
 		context.setModoClaro(!context.modoClaro);
 	};
-	
+
 	return (
 		<Box
 			sx={{
@@ -50,11 +50,18 @@ const NavBar = () => {
 				/>
 				{mostrarMenu && (
 					<Toolbar>
-						<LocalMoviesIcon
-							sx={{ fontSize: 70 }}
-							className="icono-principal"
-						/>
-
+						<Link
+							style={{
+								textDecoration: "none",
+								color: "white",
+							}}
+							to="/"
+						>
+							<LocalMoviesIcon
+								sx={{ fontSize: 70 }}
+								className="icono-principal"
+							/>
+						</Link>
 						<List
 							component="nav"
 							sx={{
