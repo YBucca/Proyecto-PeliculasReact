@@ -35,17 +35,13 @@ const Footer = () => {
 			</a>
 			<a
 				href="https://github.com/YBucca"
-				target="_blank"
-				rel="noopener"
 				aria-label="Ir a mi linkedin"
 			>
 				<GitHubIcon sx={{ color: "#9f86c0", m: 1 }} />
 			</a>
 			<a
 				href="mailto:yani.bucca@gmail.com"
-				target="_blank"
-				rel="noopener"
-				aria-label="Ir a mi linkedin"
+				aria-label="Ir a mi mail"
 			>
 				<FavoriteIcon sx={{ color: "#9f86c0", m: 1 }} />
 			</a>

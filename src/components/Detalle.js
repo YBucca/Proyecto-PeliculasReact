@@ -105,8 +105,6 @@ const Detalle = () => {
 									color: "violet",
 								}}
 								href={pelicula.homepage}
-								target="_blank"
-								rel="noopener"
 							>
 								{pelicula.homepage}
 							</a>
