@@ -12,7 +12,6 @@ import NightlightIcon from "@mui/icons-material/Nightlight";
 import IconButton from "@mui/material/IconButton";
 import Selectlang from "./Selectlang";
 import { cambioLenguaje } from "../utils/variables";
-import MenuIcon from "@mui/icons-material/Menu";
 import Hamburger from "hamburger-react";
 
 const NavBar = () => {

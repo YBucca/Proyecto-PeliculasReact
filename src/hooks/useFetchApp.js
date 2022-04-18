@@ -29,7 +29,7 @@ const useFetchApp = (tendencia, tipo, categoria, page) => {
 				setTotalPages(data.total_pages);
 				setCargando(false);
 			});
-	}, [contexto.lenguaje, page]);
+	}, [contexto.lenguaje, page, categoria, tendencia, tipo]);
 	return {
 		datos: datos,
 		cargando: cargando,

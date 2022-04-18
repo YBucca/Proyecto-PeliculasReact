@@ -34,7 +34,7 @@ const Buscar = () => {
 					}
 				});
 		}
-	}, [searchParams, page]);
+	}, [searchParams, page, navigate]);
 	const handleChange = (event, value) => {
 		setPage(value);
 	};

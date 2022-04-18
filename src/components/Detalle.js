@@ -25,7 +25,7 @@ const Detalle = () => {
 		)
 			.then((res) => res.json())
 			.then((data) => setPelicula(data));
-	}, [contexto.lenguaje]);
+	}, [params.idPelicula, contexto.lenguaje]);
 
 	const handleClickVerVideo = () => {
 		setVerVideo(true);
@@ -40,7 +40,6 @@ const Detalle = () => {
 				<Video handleClickCerrarVideo={handleClickCerrarVideo} />
 			)}
 			<Box
-			
 				sx={{
 					height: "100%",
 					width: "100%",
@@ -107,6 +106,7 @@ const Detalle = () => {
 								}}
 								href={pelicula.homepage}
 								target="_blank"
+								rel="noopener"
 							>
 								{pelicula.homepage}
 							</a>

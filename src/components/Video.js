@@ -13,7 +13,7 @@ const Video = ({ handleClickCerrarVideo }) => {
 		)
 			.then((res) => res.json())
 			.then((data) => setPelicula(data.results));
-	}, [contexto.lenguaje]);
+	}, [params.idPelicula, contexto.lenguaje]);
 	return (
 		<div className="seccion-video">
 			<div className="container-btn">
