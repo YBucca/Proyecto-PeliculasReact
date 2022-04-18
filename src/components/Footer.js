@@ -27,22 +27,14 @@ const Footer = () => {
 			</Typography>
 			<a
 				href="https://www.linkedin.com/in/yaninabucca/"
-				target="_blank"
-				rel="noopener"
 				aria-label="Ir a mi linkedin"
 			>
 				<LinkedInIcon sx={{ color: "#9f86c0", m: 1 }} />
 			</a>
-			<a
-				href="https://github.com/YBucca"
-				aria-label="Ir a mi linkedin"
-			>
+			<a href="https://github.com/YBucca" aria-label="Ir a mi linkedin">
 				<GitHubIcon sx={{ color: "#9f86c0", m: 1 }} />
 			</a>
-			<a
-				href="mailto:yani.bucca@gmail.com"
-				aria-label="Ir a mi mail"
-			>
+			<a href="mailto:yani.bucca@gmail.com" aria-label="Ir a mi mail">
 				<FavoriteIcon sx={{ color: "#9f86c0", m: 1 }} />
 			</a>
 		</Box>
