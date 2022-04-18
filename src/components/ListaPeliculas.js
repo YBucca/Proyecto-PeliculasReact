@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import ListaItem from "./ListaItem";
 import Grid from "@mui/material/Grid";
 
