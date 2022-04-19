@@ -1,12 +1,12 @@
 # PROYECTO FINAL 
 
-Les presento mi proyecto final del Bootcamp FrontEnd en ADA ITW. 
+Les presento mi proyecto final del Bootcamp FrontEnd de ADA ITW. 
 
 ## Consignas para el proyecto
 
 https://9na-frontend-online.adaitw.org/docs/modulo-8/proyecto
 
-### Lenguajes, tecnologías y librerias:
+### Lenguajes, tecnologías y librerías:
 
 - **React**
 
@@ -23,9 +23,9 @@ https://9na-frontend-online.adaitw.org/docs/modulo-8/proyecto
 - **React Router**
 
 
-🎬 Información sobre el proyecto:
+### 🎬 Información sobre el proyecto:
 
-- Fue realizado con API de https://www.themoviedb.org/
+- Fue realizado con la API de https://www.themoviedb.org/
 - Podrás visualizar en su página principal películas que son tendencia, populares y las mejores puntuadas.
 - Podrás navegar a la sección de últimos lanzamientos y populares, como asi también hacer una búsqueda de cada película.  
 - Podrás elegir el idioma (Español, Inglés, Italiano y Portugués)
@@ -40,7 +40,7 @@ https://9na-frontend-online.adaitw.org/docs/modulo-8/proyecto
 
 ### :earth_americas: Link a el sitio web
 
-- [Ir al proyecto]
+- [Ir al proyecto](https://ada-peliculas.netlify.app/)
 
 
 ![cinema](https://user-images.githubusercontent.com/80077329/163693940-facfb40b-17aa-46b8-b298-703f39fe27ad.png)
