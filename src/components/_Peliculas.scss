@@ -78,8 +78,12 @@
 .hamburger-react {
 	display: none !important;
 }
+.nav-bar{
+	display: none !important;
+}
 
 @media screen and(max-width:900px) {
+
 	.detalle-img {
 		width: 300px !important;
 		height: 400px;
@@ -95,6 +99,9 @@
 }
 
 @media screen and(max-width:500px) {
+	h3{
+		font-size: 30px !important;
+	}
 	.detalle-container {
 		display: flex;
 		flex-direction: column;
@@ -117,7 +124,7 @@
 		}
 	}
 	.nav-bar {
-		display: none;
+		display: flex !important;
 		flex-direction: column !important;
 		position: fixed;
 		top: 0;
@@ -125,10 +132,13 @@
 		height: 27vh;
 		width: 300px;
 	}
+	.hidden {
+		display: none !important;
+	}
 	.box-nav {
-		display: flex;
-		justify-content: flex-end;
-		margin-left: 50px;
+		position: relative;
+		left:200px;
+		bottom: 160px;
 	}
 	.icono-principal {
 		display: none !important;
@@ -139,7 +149,8 @@
 	.tamaño-responsive {
 		font-size: 18px !important;
 	}
-	.pagination{
+	.pagination {
 		width: 300px !important;
 	}
+
 }
