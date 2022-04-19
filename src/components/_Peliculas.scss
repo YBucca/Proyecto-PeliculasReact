@@ -75,9 +75,8 @@
 .detalle-info {
 	width: 600px;
 }
-.btn-burger {
+.hamburger-react {
 	display: none !important;
-	//no funciona la clase
 }
 
 @media screen and(max-width:900px) {
@@ -134,8 +133,8 @@
 	.icono-principal {
 		display: none !important;
 	}
-	.btn-burger {
-		display: flex;
+	.hamburger-react {
+		display: flex !important;
 	}
 	.tamaño-responsive {
 		font-size: 18px !important;

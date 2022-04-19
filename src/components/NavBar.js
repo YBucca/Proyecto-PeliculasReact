@@ -13,11 +13,12 @@ import IconButton from "@mui/material/IconButton";
 import Selectlang from "./Selectlang";
 import { cambioLenguaje } from "../utils/variables";
 import Hamburger from "hamburger-react";
+import SearchIcon from "@mui/icons-material/Search";
 
 const NavBar = () => {
-	const [mostrarMenu, setMostrarMenu] = useState(false);
+	const [mostrarMenu, setMostrarMenu] = useState(true);
 	const handleClickMenu = () => {
-		setMostrarMenu(!mostrarMenu); //ver ??
+		setMostrarMenu(!mostrarMenu);
 	};
 	const context = useContext(Context);
 	const handleClick = () => {
@@ -39,10 +40,8 @@ const NavBar = () => {
 				}}
 				position="static"
 			>
-				{/* solo que se muestre en mobile ?? */}
 				<Hamburger
 					label="Show menu"
-					className="btn-burger"
 					toggled={mostrarMenu}
 					toggle={setMostrarMenu}
 					onClick={handleClickMenu}
@@ -101,7 +100,7 @@ const NavBar = () => {
 									style={{
 										textDecoration: "none",
 										color: "#9f86c0",
-										width: "100px",
+										width: "100%",
 									}}
 									to="/populares"
 								>
@@ -112,11 +111,14 @@ const NavBar = () => {
 								</Link>
 							</ListItem>
 							<ListItem button>
+								<SearchIcon
+									sx={{ fontSize: 30, color: "#9f86c0" }}
+								/>
 								<Link
 									style={{
 										textDecoration: "none",
 										color: "#9f86c0",
-										width: "100px",
+										width: "100%",
 									}}
 									to="/busqueda"
 								>
