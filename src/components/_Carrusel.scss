@@ -1,0 +1,12 @@
+@import "config";
+.slick-slider {
+	width: 95%;
+	margin: auto;
+	.slick-prev:before,
+	.slick-next:before {
+		color: $violeta-claro;
+	}
+  .slick-dots li button:before{
+    color: $violeta-claro;
+  }
+}

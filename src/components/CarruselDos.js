@@ -1,5 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../App.scss";
 import Slider from "react-slick";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -22,9 +23,13 @@ const CarruselDos = ({ info }) => {
 		slidesToScroll: 1,
 		autoplay: true,
 	};
-	const contexto = useContext(Context)
+	const contexto = useContext(Context);
 	return (
-		<Container maxWidth="xl" sx={{ bgcolor: "transparent", mb: 2 }}>
+		<Container
+			maxWidth="xl"
+			sx={{ bgcolor: "transparent", mb: 2 }}
+			className="container-carruselDos"
+		>
 			<Slider {...settings}>
 				{info.map((elemento) => (
 					<div key={elemento.id}>
@@ -40,6 +45,7 @@ const CarruselDos = ({ info }) => {
 								backgroundSize: "cover",
 								backgroundPosition: "center",
 							}}
+							className="card-carruselDos"
 						>
 							<CardContent
 								sx={{
@@ -82,9 +88,11 @@ const CarruselDos = ({ info }) => {
 									>
 										<Button variant="contained">
 											{
-												cambioLenguaje[contexto.lenguaje]
-													.btnVerMas
-											}...
+												cambioLenguaje[
+													contexto.lenguaje
+												].btnVerMas
+											}
+											...
 										</Button>
 									</Link>
 								</CardActions>

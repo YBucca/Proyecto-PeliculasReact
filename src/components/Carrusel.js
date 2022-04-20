@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Context from "../context/Context";
+import "../App.scss";
 
 const Carrusel = ({ mensaje, info }) => {
 	const context = useContext(Context);

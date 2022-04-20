@@ -78,12 +78,11 @@
 .hamburger-react {
 	display: none !important;
 }
-.nav-bar{
+.nav-bar {
 	display: none !important;
 }
 
 @media screen and(max-width:900px) {
-
 	.detalle-img {
 		width: 300px !important;
 		height: 400px;
@@ -99,7 +98,7 @@
 }
 
 @media screen and(max-width:500px) {
-	h3{
+	h3 {
 		font-size: 30px !important;
 	}
 	.detalle-container {
@@ -137,7 +136,7 @@
 	}
 	.box-nav {
 		position: relative;
-		left:200px;
+		left: 200px;
 		bottom: 160px;
 	}
 	.icono-principal {
@@ -152,5 +151,10 @@
 	.pagination {
 		width: 300px !important;
 	}
-
+	.container-carruselDos {
+		width: 90% !important;
+	}
+	.card-carruselDos {
+		height: 400px !important;
+	}
 }
