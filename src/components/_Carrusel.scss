@@ -10,3 +10,12 @@
     color: $violeta-claro;
   }
 }
+
+@media screen and(max-width:500px) {
+  .container-carruselDos {
+		width: 90% !important;
+	}
+	.card-carruselDos {
+		height: 450px !important;
+	}
+}
