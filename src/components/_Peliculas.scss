@@ -99,7 +99,7 @@
 
 @media screen and(max-width:500px) {
 	h3 {
-		font-size: 30px !important;
+		font-size: 26px !important;
 	}
 	.detalle-container {
 		display: flex;
@@ -135,8 +135,9 @@
 		display: none !important;
 	}
 	.box-nav {
+		width: 150px !important;
 		position: relative;
-		left: 200px;
+		left: 170px;
 		bottom: 160px;
 	}
 	.icono-principal {
@@ -146,7 +147,7 @@
 		display: flex !important;
 	}
 	.tamaño-responsive {
-		font-size: 18px !important;
+		font-size: 15px !important;
 	}
 	.pagination {
 		width: 300px !important;

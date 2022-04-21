@@ -12,7 +12,6 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 			sx={{
 				width: "100%",
 				display: "flex",
-
 				alignItems: "center",
 				justifyContent: "space-between",
 				borderBottom: "1px solid grey",
@@ -36,7 +35,7 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 				/>
 			</Stack>
 			<Typography
-				variant="h6"
+				variant="h5"
 				sx={{ p: 2 }}
 				className="tamaño-responsive"
 			>

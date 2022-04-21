@@ -8,11 +8,11 @@ import Context from "../context/Context";
 const Selectlang = () => {
 	const contexto = useContext(Context);
 	const handleChange = (e) => {
-	 contexto.setLenguaje(e.target.value);
+		contexto.setLenguaje(e.target.value);
 	};
 	return (
 		<div>
-			<FormControl sx={{ ml: 3, minWidth: 70, mr:4}}>
+			<FormControl sx={{ minWidth: 70, ml: 2 }}>
 				<InputLabel id="demo-simple-select-autowidth-label">
 					<LanguageIcon color="secondary" />
 				</InputLabel>
