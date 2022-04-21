@@ -18,7 +18,7 @@ const Video = ({ handleClickCerrarVideo }) => {
 		<div className="seccion-video">
 			<div className="container-btn">
 				<button className="btn-cerrar" onClick={handleClickCerrarVideo}>
-					<CloseIcon />
+					<CloseIcon sx={{color:"black"}} />
 				</button>
 			</div>
 		<div className="container-video">

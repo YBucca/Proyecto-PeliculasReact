@@ -40,7 +40,7 @@ const NavBar = () => {
 				{mostrarMenu && (
 					<NavList className="nav-bar" handleClick={handleClick} />
 				)}
-				<NavList className="hidden" handleClick={handleClick} />
+				<NavList className="hidden" handleClick={handleClick} text="text-align"/>
 			</AppBar>
 		</Box>
 	);

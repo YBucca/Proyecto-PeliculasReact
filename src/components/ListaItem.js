@@ -15,6 +15,7 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 				alignItems: "center",
 				justifyContent: "space-between",
 				borderBottom: "1px solid grey",
+				mb:1
 			}}
 		>
 			<Avatar alt={titulo} src={imagen} />
@@ -37,7 +38,7 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 			<Typography
 				variant="h5"
 				sx={{ p: 2 }}
-				className="tamaño-responsive"
+				className="hidden"
 			>
 				{puntaje / 2}
 			</Typography>

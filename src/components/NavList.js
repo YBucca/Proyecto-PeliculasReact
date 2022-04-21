@@ -5,14 +5,14 @@ import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import IconButton from "@mui/material/IconButton";
-import { useContext} from "react";
+import { useContext } from "react";
 import Context from "../context/Context";
 import Selectlang from "./Selectlang";
 import { cambioLenguaje } from "../utils/variables";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
-const NavList = ({ handleClick, className }) => {
+const NavList = ({ handleClick, className, text }) => {
 	const context = useContext(Context);
 	return (
 		<Toolbar className={className}>
@@ -33,7 +33,6 @@ const NavList = ({ handleClick, className }) => {
 				sx={{
 					display: "flex",
 					flexDirection: "row",
-					alignItems: "center",
 				}}
 				className={className}
 			>
@@ -42,10 +41,12 @@ const NavList = ({ handleClick, className }) => {
 						style={{
 							textDecoration: "none",
 							color: "#9f86c0",
+							width: "140px",
 						}}
+						className={text}
 						to="/"
 					>
-						Home
+						{cambioLenguaje[context.lenguaje].home}
 					</Link>
 				</ListItem>
 				<ListItem button>
@@ -53,8 +54,9 @@ const NavList = ({ handleClick, className }) => {
 						style={{
 							textDecoration: "none",
 							color: "#9f86c0",
-							width: "195px",
+							width: "194px",
 						}}
+						className={text}
 						to="/ultimos-lanzamientos"
 					>
 						{cambioLenguaje[context.lenguaje].navLanzamientos}
@@ -65,8 +67,8 @@ const NavList = ({ handleClick, className }) => {
 						style={{
 							textDecoration: "none",
 							color: "#9f86c0",
-							width: "100%",
 						}}
+						className={text}
 						to="/populares"
 					>
 						{cambioLenguaje[context.lenguaje].navPopulares}
@@ -78,8 +80,8 @@ const NavList = ({ handleClick, className }) => {
 						style={{
 							textDecoration: "none",
 							color: "#9f86c0",
-							width: "100%",
 						}}
+						className={text}
 						to="/busqueda"
 					>
 						{cambioLenguaje[context.lenguaje].navBuscar}
@@ -98,6 +100,7 @@ const NavList = ({ handleClick, className }) => {
 					color="secondary"
 					aria-label="cambio de tema oscuro a claro"
 					onClick={handleClick}
+					className="modo-icon"
 				>
 					{context.modoClaro ? (
 						<NightlightIcon sx={{ fontSize: 30 }} />
@@ -111,4 +114,4 @@ const NavList = ({ handleClick, className }) => {
 	);
 };
 
-export default NavList
+export default NavList;
