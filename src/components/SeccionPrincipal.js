@@ -54,7 +54,7 @@ const SeccionPrincipal = () => {
 							border: "1px solid #221942",
 						}}
 					>
-						<Typography variant="h3" gutterBottom>
+						<Typography variant="h3" gutterBottom sx={{mb:4}}>
 							{cambioLenguaje[context.lenguaje].mejorPuntuadas}
 						</Typography>
 						<ListaPeliculas

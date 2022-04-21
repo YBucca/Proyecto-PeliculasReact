@@ -1,3 +1,4 @@
+import "../App.scss";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -8,17 +9,23 @@ const Cards = ({ titulo, imagen }) => {
 	const context = useContext(Context);
 	return (
 		<Card
+			className="Card-pelicula"
 			sx={{
 				width: 330,
 				height: 530,
 				bgcolor: context.modoClaro ? "#9f86c0" : "transparent",
 				position: "relative",
 				m: 2,
-				'&:hover':{transform:"scale(1.15)", transitionDuration:"0.3s", zIndex:7}
+				"&:hover": {
+					transform: "scale(1.15)",
+					transitionDuration: "0.3s",
+					zIndex: 7,
+				},
 			}}
 		>
 			<CardContent sx={{ textAlign: "center" }}>
 				<CardMedia
+				 className="imagen-pelicula"
 					sx={{ width: "100%", height: "440px" }}
 					component="img"
 					image={imagen}

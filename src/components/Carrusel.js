@@ -57,7 +57,7 @@ const Carrusel = ({ mensaje, info }) => {
 				p: 5,
 			}}
 		>
-			<Box sx={{ display: "flex", alignItems: "center",p:2 }}>
+			<Box sx={{ display: "flex", alignItems: "center", p: 2 }}>
 				<Typography variant="h3">{mensaje}</Typography>
 				<Link
 					style={{
@@ -70,7 +70,7 @@ const Carrusel = ({ mensaje, info }) => {
 						size="small"
 						color="secondary"
 						aria-label="ir a películas populares"
-						sx={{ml:3}}
+						sx={{ ml: 3 }}
 					>
 						<ArrowForwardIosIcon />
 					</Fab>
