@@ -16,11 +16,9 @@ const Populares = () => {
 		cargando,
 		totalPages,
 	} = useFetchApp("", "movie", "popular", page);
-
 	const handleChange = (event, value) => {
 		setPage(value);
 	};
-
 	return (
 		<div className="section-flex">
 			<Typography variant="h3" gutterBottom>
