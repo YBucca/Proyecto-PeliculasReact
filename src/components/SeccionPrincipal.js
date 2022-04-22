@@ -27,7 +27,6 @@ const SeccionPrincipal = () => {
 	return (
 		<div className="home">
 			<Loader cargando={cargandoGeneral} />
-
 			{!cargandoGeneral && (
 				<>
 					<CarruselDos
