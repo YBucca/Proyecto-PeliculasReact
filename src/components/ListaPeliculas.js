@@ -12,8 +12,7 @@ const ListaPeliculas = ({ info }) => {
 					height: "500px",
 					backgroundColor: "#9f86c0",
 					overflowY: "scroll",
-					pl: 5,
-					pr: 5,
+					p: 5,
 				}}
 			>
 				{info.map((elemento) => (
