@@ -20,9 +20,9 @@ const Buscar = () => {
 	useEffect(() => {
 		if (searchParams.get("query")) {
 			fetch(
-				`https://api.themoviedb.org/3/search/movie?api_key=457fa7dd417d06a0e15d7fe61f662df1&query=${searchParams.get(
-					"query"
-				)}&page=${page}`
+				`https://api.themoviedb.org/3/search/movie?api_key=457fa7dd417d06a0e15d7fe61f662df1&language=${
+					context.lenguaje
+				}&query=${searchParams.get("query")}&page=${page}`
 			)
 				.then((res) => res.json())
 				.then((data) => {
@@ -34,7 +34,7 @@ const Buscar = () => {
 					}
 				});
 		}
-	}, [searchParams, page, navigate]);
+	}, [searchParams, page, navigate, context.lenguaje]);
 	const handleChange = (event, value) => {
 		setPage(value);
 	};

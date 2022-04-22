@@ -15,6 +15,7 @@ export const cambioLenguaje = {
 	es: {
 		populares: "Películas populares",
 		mejorPuntuadas: "Películas mejor puntuadas",
+		home: "Página principal",
 		navPopulares: "Populares",
 		navLanzamientos: "Últimos Lanzamientos",
 		navBuscar: "Buscar",
@@ -27,6 +28,7 @@ export const cambioLenguaje = {
 	en: {
 		populares: "Popular movies",
 		mejorPuntuadas: "Rated improvement movies",
+		home: "Home",
 		navPopulares: "Popular",
 		navLanzamientos: "Latest releases",
 		navBuscar: "Search",
@@ -39,6 +41,7 @@ export const cambioLenguaje = {
 	pt: {
 		populares: "Filmes populares",
 		mejorPuntuadas: "Filmes sobre melhoria classificada",
+		home: "Página principal",
 		navPopulares: "Popular",
 		navLanzamientos: "Ultimos Lançamentos",
 		navBuscar: "Procurar",
@@ -51,6 +54,7 @@ export const cambioLenguaje = {
 	it: {
 		populares: "Film popolari",
 		mejorPuntuadas: "Film di miglioramento valutato",
+		home: "Página iniciale",
 		navPopulares: "Popolare",
 		navLanzamientos: "Ultime versioni",
 		navBuscar: "Cercare",
