@@ -27,7 +27,7 @@ const CarruselDos = ({ info }) => {
 	return (
 		<Container
 			maxWidth="xl"
-			sx={{ bgcolor: "transparent", mb: 2, display:"flex", alignItems:"center", justifyContent:"center" }}
+			sx={{ bgcolor: "transparent", display:"flex", alignItems:"center", justifyContent:"center" }}
 			className="container-carruselDos"
 		>
 			<Slider {...settings}>

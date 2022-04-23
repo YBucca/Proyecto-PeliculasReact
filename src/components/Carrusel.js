@@ -53,7 +53,6 @@ const Carrusel = ({ mensaje, info }) => {
 			maxWidth="xl"
 			sx={{
 				bgcolor: context.modoClaro ? "modo-claro" : "modo-oscuro",
-				mb: 5,
 				p: 5,
 			}}
 		>
