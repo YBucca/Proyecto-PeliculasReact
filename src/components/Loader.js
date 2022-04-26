@@ -8,7 +8,7 @@ const Loader = ({ cargando }) => {
 				sx={{
 					display: "flex",
 					position: "absolute",
-					top: "515px",
+					top: "400px",
 				}}
 			>
 				<CircularProgress color="secondary" size="100px" />
