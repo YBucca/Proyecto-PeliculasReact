@@ -56,7 +56,7 @@ const Carrusel = ({ mensaje, info }) => {
 				p: 5,
 			}}
 		>
-			<Box sx={{ display: "flex", alignItems: "center", p: 2 }}>
+			<Box sx={{ display: "flex", alignItems: "center" }}>
 				<Typography variant="h3">{mensaje}</Typography>
 				<Link
 					style={{
