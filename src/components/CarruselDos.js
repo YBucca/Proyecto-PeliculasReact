@@ -27,7 +27,12 @@ const CarruselDos = ({ info }) => {
 	return (
 		<Container
 			maxWidth="xl"
-			sx={{ bgcolor: "transparent", display:"flex", alignItems:"center", justifyContent:"center" }}
+			sx={{
+				bgcolor: "transparent",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+			}}
 			className="container-carruselDos"
 		>
 			<Slider {...settings}>
@@ -75,7 +80,11 @@ const CarruselDos = ({ info }) => {
 								>
 									{elemento.title}
 								</Typography>
-								<Typography variant="body1" gutterBottom>
+								<Typography
+									variant="body1"
+									gutterBottom
+									className="letra-responsive"
+								>
 									{elemento.overview}
 								</Typography>
 								<CardActions>
