@@ -110,6 +110,7 @@
 	h3 {
 		font-size: 26px !important;
 	}
+
 	.detalle-container {
 		display: flex;
 		flex-direction: column;
@@ -172,5 +173,9 @@
 	}
 	.letra-responsive {
 		font-size: 14px !important;
+	}
+	.titulo-pelicula {
+		font-size: 24px !important;
+		font-weight: bold !important;
 	}
 }

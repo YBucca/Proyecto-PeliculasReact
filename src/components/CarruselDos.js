@@ -75,8 +75,9 @@ const CarruselDos = ({ info }) => {
 								/>
 								<Typography
 									variant="h4"
-									gutterBottom
-									sx={{ color: "black" }}
+								
+									className="titulo-pelicula"
+									sx={{ color: "black",fontWeight:"bold" }}
 								>
 									{elemento.title}
 								</Typography>
