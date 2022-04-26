@@ -15,7 +15,7 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 				alignItems: "center",
 				justifyContent: "space-between",
 				borderBottom: "1px solid grey",
-				mb:1
+				mb: 1,
 			}}
 		>
 			<Avatar alt={titulo} src={imagen} />
@@ -26,21 +26,23 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 			>
 				{titulo}
 			</Typography>
+
 			<Stack spacing={1}>
 				<Rating
 					name="half-rating-read"
 					defaultValue={puntaje / 2}
 					precision={0.5}
 					readOnly
-					className="tamaño-responsive"
+					className="hidden"
 				/>
 			</Stack>
 			<Typography
 				variant="h5"
-				sx={{ p: 2 }}
-				className="hidden"
+				sx={{ p: 2 ,display:"flex"}}
+				className="tamaño-responsive"
 			>
 				{puntaje / 2}
+				<span className="hidden-desktop"> ⭐</span>
 			</Typography>
 			<Link
 				to={`/movie/${link}`}

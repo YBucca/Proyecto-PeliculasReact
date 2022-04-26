@@ -87,6 +87,9 @@
 .text-align {
 	text-align: center;
 }
+.hidden-desktop {
+	display: none;
+}
 
 @media screen and(max-width:900px) {
 	.detalle-img {
@@ -162,5 +165,9 @@
 	}
 	.pagination {
 		width: 300px !important;
+	}
+	.hidden-desktop {
+		display: flex;
+		padding-left: 3px;
 	}
 }
