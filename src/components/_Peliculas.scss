@@ -104,6 +104,35 @@
 		justify-content: center;
 		align-items: center;
 	}
+	.nav-bar {
+		display: flex !important;
+		flex-direction: column !important;
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 15vh;
+		width: 300px;
+	}
+	.hidden {
+		display: none !important;
+	}
+	.box-nav {
+		width: 130px !important;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		left: 500px;
+		bottom: 140px;
+		.modo-icon {
+			margin-bottom: 30px;
+		}
+	}
+	.icono-principal {
+		display: none !important;
+	}
+	.hamburger-react {
+		display: flex !important;
+	}
 }
 
 @media screen and(max-width:500px) {

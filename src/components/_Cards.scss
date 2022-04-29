@@ -1,3 +1,12 @@
+@media screen and(max-width:900px) {
+	.Card-pelicula {
+		width: 220px !important;
+		height: 340px !important;
+		.imagen-pelicula {
+			height: 250px !important;
+		}
+	}
+}
 @media screen and(max-width:500px) {
 	.Card-pelicula {
 		width: 280px !important;
