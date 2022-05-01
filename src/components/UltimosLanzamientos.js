@@ -22,7 +22,7 @@ const UltimosLanzamientos = () => {
 			};
 	return (
 		<div className="section-flex">
-			<Typography variant="h3" gutterBottom>
+			<Typography variant="h3" gutterBottom sx={{ mt: 4 }}>
 				{cambioLenguaje[contexto.lenguaje].navLanzamientos}
 			</Typography>
 			<Loader cargando={cargando} />
