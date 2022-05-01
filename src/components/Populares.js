@@ -21,7 +21,7 @@ const Populares = () => {
 	};
 	return (
 		<div className="section-flex">
-			<Typography variant="h3" gutterBottom>
+			<Typography variant="h3" gutterBottom sx={{mt:4}}>
 				{cambioLenguaje[contexto.lenguaje].navPopulares}
 			</Typography>
 			<Loader cargando={cargando} />

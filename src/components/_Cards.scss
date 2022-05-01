@@ -15,4 +15,16 @@
 			height: 330px !important;
 		}
 	}
+	.container {
+		.Card-pelicula {
+			width: 160px !important;
+			height: 280px !important;
+			.imagen-pelicula {
+				height: 200px !important;
+			}
+			h6 {
+				font-size: 16px;
+			}
+		}
+	}
 }
