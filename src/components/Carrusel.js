@@ -55,6 +55,7 @@ const Carrusel = ({ mensaje, info }) => {
 				bgcolor: context.modoClaro ? "modo-claro" : "modo-oscuro",
 				p: 5,
 			}}
+			className="container-carrusel"
 		>
 			<Box sx={{ display: "flex", alignItems: "center" }}>
 				<Typography variant="h3">{mensaje}</Typography>
