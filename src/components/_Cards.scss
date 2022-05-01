@@ -8,14 +8,16 @@
 	}
 }
 @media screen and(max-width:500px) {
-	.Card-pelicula {
-		width: 160px !important;
-		height: 280px !important;
-		.imagen-pelicula {
-			height: 200px !important;
-		}
-		h6{
+	.container {
+		.Card-pelicula {
+			width: 160px !important;
+			height: 280px !important;
+			.imagen-pelicula {
+				height: 200px !important;
+			}
+			h6 {
 				font-size: 16px;
 			}
+		}
 	}
 }
