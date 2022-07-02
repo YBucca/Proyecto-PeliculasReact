@@ -17,6 +17,7 @@ import { cambioLenguaje } from "../utils/variables";
 const Detalle = () => {
 	const params = useParams();
 	const contexto = useContext(Context);
+	// pelicula es un objeto, asi que este estado deberia iniciar como {}
 	const [pelicula, setPelicula] = useState([]);
 	const [verVideo, setVerVideo] = useState(false);
 	useEffect(() => {
