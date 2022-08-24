@@ -51,6 +51,7 @@ const ListaItem = ({ titulo, imagen, link, puntaje }) => {
 					color: "black",
 				}}
 			>
+				{/* aqui vendria bien un aria label */}
 				<Fab size="small" color="secondary" aria-label="add">
 					<ArrowForwardIosIcon />
 				</Fab>

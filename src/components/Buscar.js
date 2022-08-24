@@ -41,6 +41,7 @@ const Buscar = () => {
 	const handleChangeInput = (e) => {
 		setValorDelInput(e.target.value);
 	};
+	// no es necesario el evento aqui
 	const handleClick = (e) => {
 		setSearchParams({
 			query: valorDelInput,
@@ -58,6 +59,7 @@ const Buscar = () => {
 				<Grid item md={12} xs={12}>
 					<FormControl sx={{ width: "50%" }}>
 						<InputLabel htmlFor="input-busqueda">
+							{/* que maravilloso como resolviste los lenguajes!!!! */}
 							{cambioLenguaje[context.lenguaje].ingresa}
 						</InputLabel>
 						<Input

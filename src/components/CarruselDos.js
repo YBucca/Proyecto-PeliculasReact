@@ -45,6 +45,7 @@ const CarruselDos = ({ info }) => {
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "flex-end",
+								// ojo que si no existe backgrop_path, esto rompe. aca deberias usar tu image-not-found con un condicional
 								backgroundImage: `url("https://image.tmdb.org/t/p/original/${elemento.backdrop_path}")`,
 								backgroundRepeat: "no-repeat",
 								backgroundSize: "cover",

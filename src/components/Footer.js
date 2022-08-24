@@ -26,6 +26,7 @@ const Footer = () => {
 				Yanina Bucca
 			</Typography>
 			<a
+			// bien por usar aria label!!
 				href="https://www.linkedin.com/in/yaninabucca/"
 				aria-label="Ir a mi linkedin"
 			>
